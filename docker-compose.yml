@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  test_app:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/test_app
+      - bundle_install:/test_app/vendor/bundle
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+
+  test_app_db:
+    image: mysql:latest
+    command: mysqld --default-authentication-plugin=mysql_native_password
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=root
+
+volumes:
+  bundle_install:
+    driver: local
+  mysql:
+    driver: local
