@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_one :user_informations, dependent: :destroy
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true,
-                       length: { minimum: 8 }
+                       length: { minimum: 8 },
                        format: { with: VALID_PASSWORD_REGEX }
 end
