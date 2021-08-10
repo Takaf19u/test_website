@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
-  has_one :user_informations, dependent: :destroy
+  has_one :user_detail, dependent: :destroy
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true,
                        length: { minimum: 8 },
