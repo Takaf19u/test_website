@@ -25,15 +25,15 @@ ActiveRecord::Schema.define(version: 2021_08_10_041534) do
     t.index ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
   end
 
-  create_table "user_informations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "user_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "company_name", null: false
     t.string "department_name"
     t.string "name", null: false
-    t.integer "number", null: false
+    t.integer "phone_number", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_user_informations_on_user_id"
+    t.index ["user_id"], name: "index_user_details_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -49,5 +49,5 @@ ActiveRecord::Schema.define(version: 2021_08_10_041534) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "user_informations", "users"
+  add_foreign_key "user_details", "users"
 end
