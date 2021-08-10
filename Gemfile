@@ -59,6 +59,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'kaminari'
 gem 'byebug'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 #haml
 gem 'haml-rails'
