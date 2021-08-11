@@ -119,7 +119,7 @@ ja:
       greater_than: は%{count}より大きい値にしてください
       greater_than_or_equal_to: は%{count}以上の値にしてください
       inclusion: は一覧にありません
-      invalid: は不正な値です
+      invalid: に誤りがあります
       less_than: は%{count}より小さい値にしてください
       less_than_or_equal_to: は%{count}以下の値にしてください
       model_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -201,9 +201,7 @@ ja:
   time:
     am: 午前
     formats:
-      default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
-      long: "%Y/%m/%d %H:%M"
-      short: "%m/%d %H:%M"
+      default: "%Y/%m/%d %H:%M"
     pm: 午後
   attributes:
     id: ID
@@ -215,7 +213,7 @@ ja:
     password: パスワード
     confirm_password: パスワードを確認
     remember_me: ログイン状態を保持
-    current_sign_in_at: 最終ログイン日時
+    current_sign_in_at: 最終ログイン日
     created_at: 作成日
     updated_at: 更新日
     detail: 詳細

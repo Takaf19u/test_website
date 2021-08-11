@@ -1,0 +1,18 @@
+%h1 ユーザー情報 一覧画面
+%table
+  %tr
+    %th= I18n.t('attributes.id')
+    %th= I18n.t('attributes.email')
+    %th= I18n.t('attributes.current_sign_in_at')
+    %th= I18n.t('attributes.created_at')
+    %th= I18n.t('attributes.updated_at')
+    %th= I18n.t('attributes.detail')
+    %th= I18n.t('attributes.delete')
+  -@users.each do |user|
+    %tr
+      %td= user.id
+      %td= user.email
+      %td= l user.current_sign_in_at if user.current_sign_in_at.present?
+      %td= l user.created_at
+      %td= l user.updated_at
+= paginate @users

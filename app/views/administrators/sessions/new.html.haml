@@ -1,17 +1,22 @@
-%h2 Log in
+%h2= I18n.t("attributes.login")
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .field.alert= alert
   .field
     = f.label :email
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.text_field :email, autofocus: true, autocomplete: "email"
+    - if @errors["email"].present?
+      %p.alert= @errors["email"]
   .field
     = f.label :password
     %br/
-    = f.password_field :password, autocomplete: "current-password"
+    = f.text_field :password, type: :password, autocomplete: "current-password"
+    - if @errors["password"].present?
+      %p.alert= @errors["password"]
   - if devise_mapping.rememberable?
     .field
       = f.check_box :remember_me
       = f.label :remember_me
   .actions
-    = f.submit "Log in"
-= render "administrators/shared/links"
+    = f.submit I18n.t("attributes.login")
+-# = render "administrators/shared/links"
