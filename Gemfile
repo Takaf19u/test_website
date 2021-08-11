@@ -62,6 +62,7 @@ gem 'kaminari'
 gem 'byebug'
 gem 'better_errors'
 gem 'binding_of_caller'
+gem 'font-awesome-sass'
 
 #haml
 gem 'haml-rails'
