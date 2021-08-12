@@ -221,8 +221,8 @@ ja:
     update: 更新
     delete: 削除
     back: 戻る
-    login: ログイン
-    logout: ログアウト
+    login: Log in
+    logout: Log out
     new: 新規登録
     confirm: 確認する
     registration: 登録

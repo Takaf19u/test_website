@@ -1,0 +1,180 @@
+body.admin {
+  background: rgb(238, 237, 237);
+}
+
+body.admin header {
+  position: fixed;
+  clear:both;
+  height: 60px;
+  width: 100%;
+  padding: 5px 10px;
+  background: #57b9f7;
+  box-shadow: 0px 3px 3px gray;
+  line-height: 3;
+}
+body.admin header img {
+  width: 150px;
+}
+body.admin header img:hover {
+  opacity: 0.5;
+}
+
+body.admin header .left_menu {
+  float: right;
+  margin-top: 5px;
+  padding: 0px 15px;
+  background: rgb(32, 83, 131);
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+body.admin header .left_menu:hover {
+  opacity: 0.8;
+}
+
+.main.admin {
+  height: 100%;
+  padding: 80px 30px 20px 30px;
+}
+
+.main.admin h1 {
+  padding: 20px 0;
+  border-bottom: 4px solid #97b3c4;
+  color: rgb(72, 80, 124);
+}
+
+/* devise
+* ========================================================================== */
+
+.main.admin .devise_contents {
+  width: 400px;
+  margin: 30px auto;
+  padding: 10px;
+}
+
+.main.admin .devise_contents h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #38acf5;
+}
+
+.main.admin .devise_contents form {
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 2px 1px #cdcecf;
+}
+
+.main.admin .devise_contents .field.alert {
+  min-height: 50px;
+  padding-top: 20px;
+  font-size: 0.8rem;
+  color: red;
+}
+
+.main.admin .devise_contents .field {
+  margin: 0px 30px;
+}
+
+.main.admin .devise_contents
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 10px 5px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+}
+
+.main.admin .devise_contents input[type="text"] {
+  margin-bottom: 30px;
+}
+
+.main.admin .devise_contents input[type="text"]:focus,
+.main.admin .devise_contents input[type="password"]:focus {
+	box-shadow: 0px 0px 2px 1px #57b9f7;
+	outline-style: none;
+}
+
+.main.admin .devise_contents .field.remenber_me {
+  padding-top: 5px;
+}
+
+.main.admin .devise_contents input[type="checkbox"],
+.main.admin .devise_contents .field.remenber_me label {
+  cursor: pointer;
+}
+
+.main.admin .devise_contents .actions {
+  margin-top: 50px;
+}
+
+.main.admin .devise_contents .actions input[type="submit"] {
+  display: block;
+  cursor: pointer;
+  padding: 20px 0px;
+  width: 100%;
+  background: #57b9f7;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+}
+
+.main.admin .devise_contents .actions input[type="submit"]:hover {
+  opacity: 0.8;
+}
+
+/* user_detail
+* ========================================================================== */
+
+.main.admin .main_contents {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.main.admin .main_contents table {
+  display: block;
+  overflow-x: scroll;
+  white-space: nowrap;
+  table-layout: fixed;
+}
+
+.main.admin .main_contents tbody {
+  display: inline-block;
+  background: white;
+}
+
+.main.admin .main_contents tr {
+  border-bottom: 1px solid rgb(206, 204, 204);
+}
+
+.main.admin .main_contents tr:first-child {
+  background: rgb(92, 107, 128);
+  color: white;
+}
+
+
+.main.admin .main_contents th {
+  height: 70px;
+}
+
+.main.admin .main_contents th:first-child,
+.main.admin .main_contents td:first-child {
+  padding-left: 30px;
+}
+
+.main.admin .main_contents th.detail {
+  width: 200px;
+}
+
+.main.admin .main_contents th.icon {
+  width: 50px;
+}
+
+.main.admin .main_contents th, td {
+  padding: 10px 30px 10px 0px;
+  text-align: left;
+}
+
+.main.admin .main_contents .pagination {
+  padding: 20px;
+}
