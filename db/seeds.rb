@@ -1,9 +1,9 @@
 # admin
-Administrator.create!( email: "admin@appirits.com", password: 'abc12345' )
+Administrator.create!(email: "admin@appirits.com", password: "abc12345")
 
 # users
 10.times do |i|
-  User.create!( email: "user#{i}@appirits.com", password: 'abc12345' )
+  User.create!(email: "user#{i}@appirits.com", password: "abc12345")
 end
 
 User.all.each do |user|
