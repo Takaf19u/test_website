@@ -1,0 +1,36 @@
+%h1 ユーザー情報 詳細
+
+%div.main_contents#user_show
+  %div#user_show_table.clearfix
+    %table.left
+      %tr
+        %th= I18n.t('attributes.id')
+        %td= @user.id
+      %tr
+        %th= I18n.t('attributes.company_name')
+        %td= @user.user_detail.company_name
+      %tr
+        %th= I18n.t('attributes.department_name')
+        %td= @user.user_detail.department_name
+      %tr
+        %th= I18n.t('attributes.name')
+        %td= @user.user_detail.name
+      %tr
+        %th= I18n.t('attributes.phone_number')
+        %td= @user.user_detail.phone_number
+    %table.right
+      %tr
+        %th= I18n.t('attributes.email')
+        %td= @user.email
+      %tr
+        %th= I18n.t('attributes.current_sign_in_at')
+        %td= l @user.current_sign_in_at if @user.current_sign_in_at.present?
+      %tr
+        %th= I18n.t('attributes.created_at')
+        %td= l @user.created_at
+      %tr
+        %th= I18n.t('attributes.updated_at')
+        %td= l @user.updated_at
+  %div.buttons
+    = link_to I18n.t('attributes.back'), admin_user_details_path
+    = link_to I18n.t('attributes.delete'), admin_user_detail_path(id: @user.id), method: :delete, data: { confirm: I18n.t('message.delete_user') }
