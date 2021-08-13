@@ -235,6 +235,8 @@ ja:
       password: 8桁以上の半角英数字
   message:
     delete_user: 'ユーザーの削除を実行しますか？'
+    delete_user_success: '削除が正常に完了しました'
+    not_data: '登録データが存在しません。'
 
 
 

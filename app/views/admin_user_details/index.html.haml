@@ -1,31 +1,42 @@
 %h1 ユーザー情報 一覧
 
 %div.main_contents
-  %table
-    %tbody
-      %tr
-        %th= I18n.t('attributes.id')
-        %th.detail= I18n.t('attributes.email')
-        %th.detail= I18n.t('attributes.current_sign_in_at')
-        %th.detail= I18n.t('attributes.created_at')
-        %th.detail= I18n.t('attributes.updated_at')
-        %th.icon= I18n.t('attributes.detail')
-        %th.icon= I18n.t('attributes.delete')
-      -@users.each do |user|
+  %div.flash
+    -if flash[:message].present?
+      %span{style: "display: block;"}= flash[:message]
+    -else
+      %span
+  %div.count= "全 #{@users_count} 件"
+  %div#detail_table
+    %table.detail
+      %tbody
         %tr
-          %td
-            = user.id
-          %td
-            = user.email
-          %td
-            = l user.current_sign_in_at if user.current_sign_in_at.present?
-          %td
-            = l user.created_at
-          %td
-            = l user.updated_at
-          %td
-            = link_to admin_user_detail_path(id: user.id) do icon("far", "sticky-note") end
-          %td
-            = link_to admin_user_detail_path(id: user.id), method: :delete, data: { confirm: I18n.t('message.delete_user') } do
-              = icon("far", "trash-alt")
+          %th= I18n.t('attributes.id')
+          %th.detail= I18n.t('attributes.email')
+          %th.detail= I18n.t('attributes.current_sign_in_at')
+          %th.detail= I18n.t('attributes.created_at')
+          %th.detail= I18n.t('attributes.updated_at')
+          %th.icon= I18n.t('attributes.detail')
+          %th.icon= I18n.t('attributes.delete')
+        -if @users.present?
+          -@users.each do |user|
+            %tr
+              %td
+                = user.id
+              %td
+                = user.email
+              %td
+                = l user.current_sign_in_at if user.current_sign_in_at.present?
+              %td
+                = l user.created_at
+              %td
+                = l user.updated_at
+              %td
+                = link_to admin_user_detail_path(id: user.id) do icon("far", "sticky-note") end
+              %td
+                = link_to admin_user_detail_path(id: user.id), method: :delete, data: { confirm: I18n.t('message.delete_user') } do
+                  = icon("far", "trash-alt")
+        -else
+          %tr
+            %td= I18n.t('message.not_data')
   %div.pagination= paginate @users

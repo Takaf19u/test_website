@@ -13,3 +13,7 @@ require('jquery')
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+$(function() {
+  setTimeout("$('.flash span').fadeOut('slow')", 2000);
+});
