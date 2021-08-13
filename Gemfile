@@ -71,3 +71,6 @@ gem 'erb2haml'
 #rubocop
 gem 'rubocop', require:false
 gem 'rubocop-rails', require:false
+gem "rubocop-packaging"
+gem 'rubocop-performance'
+gem 'rubocop-rails'
