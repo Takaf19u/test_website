@@ -6,5 +6,8 @@ Rails.application.routes.draw do
 
   devise_scope :administrator do
     root to: 'administrators/sessions#new'
+    get 'admin/login' => 'administrators/sessions#new', as: :new_admin_session
+    post 'admin/login' => 'administrators/sessions#create', as: :admin_session
+    delete 'admin/sign_out' => 'administrators/sessions#destroy', as: :destroy_admin_session
   end
 end

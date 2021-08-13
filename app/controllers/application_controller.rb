@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    resource.eql?(:administrator) ? new_administrator_session_path : new_user_session_path
+    resource.eql?(:administrator) ? new_admin_session_path : new_user_session_path
   end
 end

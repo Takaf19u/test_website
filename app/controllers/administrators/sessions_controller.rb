@@ -17,7 +17,7 @@ class Administrators::SessionsController < Devise::SessionsController
       errors = { email: admin.errors.full_messages_for(:email).first,
                  password: admin.errors.full_messages_for(:password).first
                }
-      return redirect_to new_administrator_session_path, flash: { errors: errors }
+      return redirect_to new_admin_session_path, flash: { errors: errors }
     end
     super
   end
