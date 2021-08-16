@@ -1,0 +1,24 @@
+= form_with model: @user, url: confirm_mypage_path(current_user.id), method: "post", local: true do |f|
+  = f.fields_for :user_detail do |detail|
+    .field
+      = detail.label I18n.t("attributes.name")
+      %br
+      = detail.text_field :name, autofocus: true, value: @user.user_detail.name, placeholder: I18n.t("attributes.placeholder.name")
+    .field
+      = detail.label I18n.t("attributes.company_name")
+      %br
+      = detail.text_field :company_name, value: @user.user_detail.company_name, placeholder: I18n.t("attributes.placeholder.company_name")
+    .field
+      = detail.label I18n.t("attributes.department_name")
+      %br
+      = detail.text_field :department_name, value: @user.user_detail.department_name, placeholder: I18n.t("attributes.placeholder.department_name")
+    .field
+      = detail.label I18n.t("attributes.phone_number")
+      %br
+      = detail.text_field :phone_number, value: @user.user_detail.phone_number, placeholder: I18n.t("attributes.placeholder.phone_number")
+  .field
+    = f.label :email
+    %br
+    = f.text_field :email, autocomplete: "email", value: @user.email, placeholder: I18n.t("attributes.placeholder.email")
+  .actions
+    = f.submit I18n.t("attributes.confirm")

@@ -6,8 +6,7 @@ class Administrator < ApplicationRecord
 
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
   validates :email, presence: true
-  validates :email, uniqueness: true, on: :save
+  validates :email, uniqueness: true, length: { minimum: 8 }, on: :save
   validates :password, presence: true,
                        format: { with: VALID_PASSWORD_REGEX }
-  validates :email, length: { minimum: 8 }, on: :save
 end

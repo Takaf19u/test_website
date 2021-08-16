@@ -1,0 +1,16 @@
+
+%h1 確認
+= form_with model: @user, url: mypage_path(current_user.id), method: "patch", local: true do |f|
+  =render partial: 'users/shared/user_form', locals: { user: @user }
+  .field
+    %label= I18n.t("attributes.password")
+    %p ********
+  = f.fields_for :user_detail do |detail|
+    = detail.hidden_field :name, value: @user.user_detail.name
+    = detail.hidden_field :company_name, value: @user.user_detail.company_name
+    = detail.hidden_field :department_name, value: @user.user_detail.department_name
+    = detail.hidden_field :phone_number, value: @user.user_detail.phone_number
+  = f.hidden_field :email, value: @user.email
+  .actions
+    = f.submit I18n.t("attributes.back"), name: :back
+    = f.submit I18n.t("attributes.update")
