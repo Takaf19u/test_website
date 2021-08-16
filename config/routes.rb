@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   resources :admin_user_details, only: [:index, :show, :destroy]
 
+  resources :mypages, only: [:show, :edit, :update] do
+    get 'password', on: :member
+    post 'confirm', on: :member
+  end
+
   devise_scope :administrator do
     root to: 'administrators/sessions#new'
     get 'admin/login' => 'administrators/sessions#new', as: :new_admin_session

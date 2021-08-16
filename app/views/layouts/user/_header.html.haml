@@ -1,0 +1,5 @@
+%header
+  =link_to "https://appirits.com/" do
+    = image_tag 'appirits_logo.png'
+  -if user_signed_in?
+    =link_to I18n.t('attributes.logout'), destroy_admin_session_path, method: :delete, class: "left_menu"
