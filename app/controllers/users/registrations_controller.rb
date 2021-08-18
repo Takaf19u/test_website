@@ -5,7 +5,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    path = request.path
     @user = User.new
     @user.build_user_detail
     # super

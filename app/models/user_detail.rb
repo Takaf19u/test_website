@@ -7,7 +7,6 @@ class UserDetail < ApplicationRecord
                            format: { with: VALID_PHONE_REGEX, message: I18n.t("errors.messages.phone_number_format") }
 
   def format_phone_number
-    phone_number.gsub!("-","")
+    phone_number.delete!("-")
   end
-
 end

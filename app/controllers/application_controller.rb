@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
-    resource.class.to_s.eql?("Administrator") ? admin_user_details_path : users_mypage_path(id:current_user.id)
+    resource.class.to_s.eql?("Administrator") ? admin_user_details_path : users_mypage_path(current_user.id)
   end
 
   def after_sign_out_path_for(resource)
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
 
   def routes_not_found!
-    request.path  =~ /^\/users/ ? users_redirect : admin_redirect
+    /^\/users/.match?(request.path) ? users_redirect : admin_redirect
   end
 
   private
@@ -28,7 +28,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def admin_redirect
-
-  end
+  # def admin_redirect
+  # end
 end

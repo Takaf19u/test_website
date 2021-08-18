@@ -29,7 +29,7 @@ class Users::MypagesController < ApplicationController
     if @user.update(user_params)
       redirect_to users_mypage_path(current_user.id)
     else
-      return render :edit
+      render :edit
     end
   end
 
