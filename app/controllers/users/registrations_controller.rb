@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :forbid_login_user
 
   # GET /resource/sign_up
   def new
@@ -79,9 +78,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [ user_detail_attributes: [ :name, :company_name, :department_name, :phone_number] ])
-  end
-
-  def forbid_login_user
-    redirect_to users_mypage_path(current_user.id)  if user_signed_in?
   end
 end
