@@ -6,12 +6,15 @@ Rails.application.routes.draw do
     resources :admin_user_details, only: [:index, :show, :destroy]
   end
 
-  scope module: :users do
+  namespace :users do
     resources :mypages, only: [:show, :edit, :update] do
       get 'password', on: :member
+      patch 'password_update', on: :member
       post 'confirm', on: :member
     end
   end
+
+  get '*unmatched_route', :to => 'application#routes_not_found!', format: false
 
   devise_scope :administrator do
     root to: 'administrators/sessions#new'

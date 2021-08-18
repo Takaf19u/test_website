@@ -1,0 +1,25 @@
+= f.fields_for :user_detail do |detail|
+  .field
+    = detail.label I18n.t("attributes.name")
+    %br
+    = detail.text_field :name, autofocus: true, value: user.user_detail.name, placeholder: I18n.t("attributes.placeholder.name")
+    = render partial: "users/shared/error_messages", locals: { errors: user.errors.full_messages_for("user_detail.name") }
+  .field
+    = detail.label I18n.t("attributes.company_name")
+    %br
+    = detail.text_field :company_name, value: user.user_detail.company_name, placeholder: I18n.t("attributes.placeholder.company_name")
+    = render partial: "users/shared/error_messages", locals: { errors: user.errors.full_messages_for("user_detail.company_name") }
+  .field
+    = detail.label I18n.t("attributes.department_name")
+    %br
+    = detail.text_field :department_name, value: user.user_detail.department_name, placeholder: I18n.t("attributes.placeholder.department_name")
+  .field
+    = detail.label I18n.t("attributes.phone_number")
+    %br
+    = detail.text_field :phone_number, value: user.user_detail.phone_number, placeholder: I18n.t("attributes.placeholder.phone_number")
+    = render partial: "users/shared/error_messages", locals: { errors: user.errors.full_messages_for("user_detail.phone_number") }
+.field
+  = f.label :email
+  %br
+  = f.text_field :email, autocomplete: "email", value: user.email, placeholder: I18n.t("attributes.placeholder.email")
+  = render partial: "users/shared/error_messages", locals: { errors: user.errors.full_messages_for("email") }

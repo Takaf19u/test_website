@@ -4,12 +4,7 @@
   .field
     %label= I18n.t("attributes.password")
     %p ********
-  = f.fields_for :user_detail do |detail|
-    = detail.hidden_field :name, value: @user.user_detail.name
-    = detail.hidden_field :company_name, value: @user.user_detail.company_name
-    = detail.hidden_field :department_name, value: @user.user_detail.department_name
-    = detail.hidden_field :phone_number, value: @user.user_detail.phone_number
-  = f.hidden_field :email, value: @user.email
+  =render partial: 'users/shared/confirm', locals: { user: @user, f: f }
   = f.hidden_field :password, value: @user.password
   = f.hidden_field :password_confirmation, value: @user.password
   .actions
