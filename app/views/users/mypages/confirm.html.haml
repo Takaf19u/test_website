@@ -1,0 +1,8 @@
+
+%h1 確認
+= form_with model: @user, url: users_mypage_path(current_user.id), method: "patch", local: true do |f|
+  =render partial: 'users/shared/user_form', locals: { user: @user }
+  =render partial: 'users/shared/confirm', locals: { user: @user, f: f }
+  .actions
+    = f.submit I18n.t("attributes.back"), name: :back
+    = f.submit I18n.t("attributes.update")

@@ -1,18 +1,29 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :forbid_login_user
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    @user = User.new
+    @user.build_user_detail
+    # super
+  end
+
+  def confirm
+    @user = User.new(user_params)
+    return render :new if @user.invalid?
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    if params[:back]
+      @user = User.new(user_params)
+      return render :edit
+    end
+    configure_permitted_parameters
+    super
+  end
 
   # GET /resource/edit
   # def edit
@@ -59,4 +70,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation, user_detail_attributes: [ :name, :company_name, :department_name, :phone_number])
+   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ user_detail_attributes: [ :name, :company_name, :department_name, :phone_number] ])
+  end
+
+  def forbid_login_user
+    redirect_to users_mypage_path(current_user.id)  if user_signed_in?
+  end
 end

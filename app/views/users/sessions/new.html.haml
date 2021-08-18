@@ -14,4 +14,4 @@
       = f.label :remember_me
   .actions
     = f.submit "Log in"
-= render "users/shared/links"
+    = link_to I18n.t("attributes.new"), new_user_registration_path

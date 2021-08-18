@@ -77,8 +77,8 @@ body.admin header .left_menu:hover {
   margin: 0px 30px;
 }
 
-.main.admin .devise_contents
-input[type="text"], input[type="password"] {
+.main.admin .devise_contents input[type="text"],
+.main.admin .devise_contents input[type="password"] {
   width: 100%;
   padding: 10px 5px;
   border-radius: 3px;

@@ -1,0 +1,5 @@
+
+= form_with model: @user, url: confirm_users_mypage_path(current_user.id), method: "post", local: true do |f|
+  =render partial: 'users/shared/user_input_form', locals: { user: @user, f: f }
+  .actions
+    = f.submit I18n.t("attributes.confirm")

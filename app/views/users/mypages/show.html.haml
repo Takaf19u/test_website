@@ -1,0 +1,21 @@
+%div.pkz
+  %ul.pkz_list
+
+%div.top_title
+  %h1
+    %span My Page
+    マイページ
+
+%div.main_contents
+  %div.main_menu
+    =render partial: 'users/shared/user_form', locals: { user: @user }
+  %div.side_menu.clearfix
+    %ul
+      %li
+        =link_to I18n.t("attributes.title.mypage_detail"), users_mypage_path(current_user.id)
+      %li
+        =link_to "#{I18n.t("attributes.title.mypage_detail")} #{I18n.t("attributes.edit")}", edit_users_mypage_path(current_user.id)
+      %li
+        =link_to "#{I18n.t("attributes.password")} #{I18n.t("attributes.edit")}", password_users_mypage_path(current_user.id)
+      %li
+        =link_to I18n.t('attributes.logout'), destroy_user_session_path, method: :delete
