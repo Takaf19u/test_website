@@ -16,7 +16,7 @@ class Users::MypagesController < ApplicationController
     @user = User.new(user_params)
     @user.id = current_user.id
     @user.user_detail.format_phone_number
-    return render :edit if @user.invalid?
+    return render :edit if @user.invalid?(:email_all_checks)
   end
 
   def update
@@ -26,8 +26,9 @@ class Users::MypagesController < ApplicationController
       return render :edit
     end
 
-    if @user.update(user_params)
-      redirect_to users_mypage_path(current_user.id)
+    @user.attributes = user_params
+    if @user.save(context: :email_all_checks)
+      redirect_to users_mypage_path(current_user.id), flash: { notice: I18n.t("message.complete_user_edit") }
     else
       render :edit
     end

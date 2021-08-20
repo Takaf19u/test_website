@@ -1,17 +1,27 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-    = link_to I18n.t("attributes.new"), new_user_registration_path
+=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.title.login"),
+                                                               title_en: I18n.t("attributes.title.login_en") }
+=render partial: 'users/shared/page_tabs', locals: { tabs: { I18n.t("attributes.title.login") =>  new_user_session_path,
+                                                             I18n.t("attributes.title.new") =>  new_user_registration_path } }
+.main_contents.login
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .input_form
+      .field
+        -if flash[:alert].present?
+          .error
+            - flash[:alert].split("\n").each do |err|
+              %p= err
+      .field
+        = f.label :email
+        %br
+        = f.text_field :email, autofocus: true, autocomplete: "email"
+      .field
+        = f.label :password
+        %br
+        = f.password_field :password, autocomplete: "current-password"
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+    .actions
+      = f.submit I18n.t("attributes.login"), class: "btn"
+      = link_to I18n.t("attributes.new"), new_user_registration_path, class: "btn"

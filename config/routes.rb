@@ -14,8 +14,6 @@ Rails.application.routes.draw do
     end
   end
 
-  get '*unmatched_route', :to => 'application#routes_not_found!', format: false
-
   devise_scope :administrator do
     root to: 'administrators/sessions#new'
     get 'admin/login' => 'administrators/sessions#new', as: :new_admin_session
@@ -26,4 +24,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     post 'users/sign_up/confirm', to: 'users/registrations#confirm'
   end
+
+  get '*unmatched_route', :to => 'application#routes_not_found!', format: false
 end

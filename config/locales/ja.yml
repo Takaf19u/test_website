@@ -241,11 +241,20 @@ ja:
       re_password: 新しいパスワードを再入力
     title:
       mypage_detail: ユーザー情報
+      login: ログイン
+      login_en: Log in
+      new: 新規登録
+      new_en: sign up
+      confirm: 入力内容の確認
+      confirm_en: Confirmation of input contents
+      mypage: マイページ
+      mypage_en: Mypage
   message:
     delete_user: 'ユーザーの削除を実行しますか？'
     change_password: 'パスワードを変更しますか？'
     delete_user_success: '削除が正常に完了しました'
     not_data: '登録データが存在しません。'
+    complete_user_edit: 'ユーザー情報を更新しました'
 
 
 

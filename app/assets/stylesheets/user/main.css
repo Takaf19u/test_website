@@ -1,0 +1,539 @@
+/* header
+* ========================================================================== */
+body.user header {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 1300px;
+  min-height: 96px;
+  margin: 0 auto;
+  padding: 0 0 12px;
+  background: #fff;
+}
+
+header {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  width: 100%;
+}
+body.user .header_inner {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 1300px;
+  min-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 50px 0;
+}
+body.user .header_inner > a {
+  width: 160px;
+  margin-right: auto;
+  transition: .3s all;
+}
+body.user .header_inner > a img {
+  width: 100%;
+}
+body.user .nav__sub {
+  margin: 0 0 10px;
+}
+body.user .nav__sub, .nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+body.user .header_inner li {
+  font-size: 11px;
+}
+body.user .header_inner li:first-child {
+  padding: 0;
+}
+body.user .header_inner li {
+  padding: 0 0 0 20px;
+  color: #1F2933;
+  font-weight: bold;
+}
+body.user .header_inner li a {
+  display: block;
+  position: relative;
+  padding: 0 0 5px;
+  color: #1F2933;
+  border-bottom: 1px solid transparent;
+}
+body.user .nav__sub .nav__icon {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 30px;
+  padding: 0;
+  font-weight: normal;
+  transition: .3s all;
+}
+body.user .nav__sub .nav__icon a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+body.user .nav__sub .nav__icon.map svg {
+  left: 60%;
+  color: orange;
+}
+body.user .nav__sub svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+}
+body.user .nav__menu li {
+  font-size: 12px;
+}
+body.user .pkz {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 1300px;
+  margin: 0 auto;
+  position: absolute;
+  margin: 95px auto 0;
+}
+body.user .pkz ul {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: 1200px;
+  margin: 0 auto;
+  font-size: 11px;
+}
+body.user .pkz::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: url(bg_pkz.png) no-repeat center center/100% 100%;
+}
+
+/* footer
+* ========================================================================== */
+body.user footer {
+  min-width: 1300px;
+}
+
+body.user .footer__map {
+  margin: 80px 0 0;
+  background: #1F2933;
+  font-size: 12px;
+}
+
+body.user .footer__inner {
+  width: 1200px;
+  margin: 0 auto 20px;
+  padding: 40px 0 20px;
+}
+
+body.user .footer__profile {
+  float: left;
+  width: 420px;
+  color: #fff;
+}
+
+body.user .footer__profile a {
+  display: inline-block;
+  margin: 0 0 10px;
+  width: 160px;
+}
+
+body.user .footer__profile img {
+  width: 100%;
+}
+
+body.user .footer__profile address {
+  font-style: normal;
+}
+
+body.user .footer__list ul {
+  display: inline-block;
+  border-left: 1px solid #3E4C59;
+  padding: 0 20px;
+}
+
+body.user .footer__list ul a {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-size: 12px;
+  line-height: 2;
+}
+
+body.user .organizations {
+  margin: 20px auto 15px;
+  width: 1200px;
+  text-align: center;
+}
+
+body.user .organizations img {
+  width: 80%;
+}
+
+body.user footer small {
+  display: block;
+  padding: 5px 0;
+  background: #1F2933;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* flash
+* ========================================================================== */
+body.user .flash {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  padding: 15px;
+  width: 100%;
+  border-bottom: 8px double #66bb66;
+  text-align: center;
+  color: white;
+}
+
+body.user .flash::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #17a277;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+/* main
+* ========================================================================== */
+body.user .main.user {
+  min-width: 1300px;
+}
+
+/* top_contents
+* ========================================================================== */
+body.user .top_contents {
+  position: relative;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 100%;
+  min-width: 1000px;
+  padding: 160px 0 60px;
+  color: #fff;
+  text-align: center;
+  background: #3E4C59;
+}
+body.user .top_contents::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(62, 76, 89, 0.75);
+}
+body.user .top_contents h1 {
+  position: relative;
+  margin-bottom: 0;
+  font-size: 36px;
+  text-align: center;
+}
+body.user .top_contents span {
+  display: block;
+  margin: 0 0 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* tab_contents
+* ========================================================================== */
+body.user .tab_contents ul {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 25px 0 30px;
+  width: 1000px;
+  border-bottom: 2px solid lightgray;
+  text-align: center;
+}
+body.user .tab_contents li {
+  position: relative;
+  display: inline-block;
+  margin: 0 10px;
+  color: #1F2933;
+}
+body.user .tab_contents li a::after {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: .3s;
+}
+body.user .tab_contents li a:hover::after {
+  bottom: -4px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* main_contents
+* ========================================================================== */
+body.user .main_contents {
+  margin: 0 auto;
+  padding: 60px 0 150px;
+  width: 80%;
+  max-width: 1000px;
+}
+
+body.user form {
+  text-align: center;
+}
+
+/* /users/sign_in
+/* /users/sign_up
+/* /users/sign_up/confirm
+* ========================================================================== */
+body.user .login,
+body.user .sign_up,
+body.user .confirm {
+  margin: 0 auto;
+  padding: 70px 0px 0px;
+  width: 80%;
+  max-width: 500px;
+}
+
+body.user .input_form {
+  padding: 40px 10px;
+  background: #f7f4f4;
+  box-shadow: 0px 0px 10px 1px grey;
+  border: 5px solid white;
+  border-radius: 5px;
+}
+
+body.user .input_form .field {
+  margin: 0 auto;
+  width: 300px;
+  text-align: left;
+}
+
+body.user .input_form .error {
+  margin-bottom: 5px;
+}
+
+body.user .input_form input[type="text"],
+body.user .input_form input[type="password"] {
+  padding: 5px;
+  width: 100%;
+}
+
+body.user .login .input_form input[type="text"] {
+  margin-bottom: 20px;
+}
+
+body.user form .actions {
+  margin-top: 40px;
+  padding: 0px 10px 20px;
+}
+
+body.user form .actions .btn {
+  margin: 0px 15px;
+  height: 40px;
+  width: 180px;
+  background: #03449e;
+  border-radius: 20px;
+  color: white;
+  line-height: 1.8;
+  font-size: 15px;
+  transition: .3s all;
+  outline: none
+}
+
+body.user form .actions a.btn {
+  background: gray;
+}
+
+body.user form .actions .btn:hover {
+  opacity: 0.7;
+  font-size: 16px;
+}
+
+/* /users/sign_up
+* ========================================================================== */
+body.user .sign_up .input_form {
+  padding-top: 20px;
+}
+
+body.user .sign_up .input_form label {
+  margin-top: 20px;
+}
+
+/* /users/sign_up/confirm
+* ========================================================================== */
+body.user .confirm .input_form {
+  padding-bottom: 10px;
+}
+
+body.user .confirm .field {
+  margin: 10px auto;
+  width: 300px;
+  text-align: left;
+}
+
+body.user .confirm .field p {
+  margin-bottom: 30px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+}
+
+body.user .confirm .actions .btn.back {
+  background: gray;
+}
+
+/* /users/mypages#show
+* ========================================================================== */
+body.user .mypage {
+  overflow: hidden;
+  padding-bottom: 0px;
+}
+
+body.user .mypage .side_menu {
+  display: block;
+  padding-left: 30px;
+  width: 30%;
+  border-right: 3px solid rgb(111, 112, 172);
+}
+
+body.user .mypage .side_menu ul {
+  padding-right: 60px;
+}
+
+body.user .mypage .side_menu li {
+  position: relative;
+  text-decoration: none;
+  margin: 30px 0px 0px;
+  transition: .3s;
+}
+
+body.user .mypage .side_menu li::after {
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: rgb(111, 112, 172);
+  transform: scale(0, 1);
+  transform-origin: right top;
+  transition: transform .3s;
+}
+
+body.user .mypage .side_menu li:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+
+body.user .mypage .side_menu li a {
+  transition: .3s;
+}
+
+body.user .mypage .side_menu li:hover > a,
+body.user .mypage .side_menu li:hover > svg {
+  font-weight: bold;
+  color: rgb(111, 112, 172);
+}
+
+body.user .mypage .main_menu {
+  float: right;
+  padding-left: 50px;
+  width: 70%;
+}
+
+body.user .mypage .main_menu h2 {
+  color: rgb(111, 112, 172);
+  margin-bottom: 10px;
+}
+
+body.user .mypage .main_menu .field {
+  margin: 30px 0;
+}
+
+/* /users/mypages#edit
+/* /users/mypages#password
+* ========================================================================== */
+body.user .mypage_form .field {
+  padding-right: 30px;
+  text-align: left;
+}
+
+body.user .mypage_form input[type="text"],
+body.user .mypage_form input[type="password"] {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  background: #dcebf0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: .5s;
+}
+
+body.user .mypage_form input[type="text"]:focus,
+body.user .mypage_form input[type="password"]:focus {
+  background: none;
+  border-radius: 0px;
+  border-bottom: 1px solid rgb(111, 112, 172);
+}
+
+body.user .mypage_form .actions {
+  margin-top: 40px;
+  padding: 0px 10px 20px;
+}
+
+body.user .edit_confirm .actions .btn {
+  margin: 0px 15px;
+  height: 40px;
+  width: 180px;
+  background: #03449e;
+  border-radius: 20px;
+  color: white;
+  line-height: 1.8;
+  font-size: 15px;
+  transition: .3s all;
+  outline: none
+}
+
+/* /users/mypages#confirm
+* ========================================================================== */
+body.user .edit_confirm .actions .back {
+  background: gray;
+}
+
+/* /users/mypages#password
+* ========================================================================== */
+
+body.user .mypage.password form {
+  padding-right: 200px;
+}
+
+body.user .mypage.password .error {
+  text-align: left;
+}

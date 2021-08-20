@@ -14,3 +14,6 @@
     =render partial: 'layouts/user/header'
     %div.main.user
       = yield
+    =render partial: 'layouts/user/footer'
+    -if flash[:notice].present?
+      .flash= flash[:notice]

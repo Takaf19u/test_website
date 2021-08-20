@@ -28,6 +28,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # def admin_redirect
-  # end
+  def admin_redirect
+    redirect_to new_admin_session_path
+  end
 end
