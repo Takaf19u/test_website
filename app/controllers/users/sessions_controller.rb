@@ -13,7 +13,7 @@ class Users::SessionsController < Devise::SessionsController
   def create
     self.resource = User.new(user_params)
     if resource.invalid?(:password)
-      flash.now[:alert] = resource.errors.full_messages.join("\n")
+      flash[:alert] = resource.errors.full_messages.join("\n")
       return redirect_to new_user_session_path
     end
     self.resource = warden.authenticate!(auth_options)

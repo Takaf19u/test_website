@@ -254,6 +254,7 @@ ja:
     change_password: 'パスワードを変更しますか？'
     delete_user_success: '削除が正常に完了しました'
     not_data: '登録データが存在しません。'
+    complete_user_edit: 'ユーザー情報を更新しました'
 
 
 

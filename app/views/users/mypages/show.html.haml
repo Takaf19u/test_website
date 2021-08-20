@@ -2,6 +2,6 @@
                                                                title_en: I18n.t("attributes.title.mypage_en") }
 .main_contents.mypage.top
   .main_menu
-    %h2 ユーザー情報
+    %h2= I18n.t("attributes.title.mypage_detail")
     =render partial: 'users/shared/user_form', locals: { user: @user }
   =render partial: 'users/shared/side_menu'

@@ -27,8 +27,8 @@ class Users::MypagesController < ApplicationController
     end
 
     @user.attributes = user_params
-    if @user.save(:email_all_checks)
-      redirect_to users_mypage_path(current_user.id)
+    if @user.save(context: :email_all_checks)
+      redirect_to users_mypage_path(current_user.id), flash: { notice: I18n.t("message.complete_user_edit") }
     else
       render :edit
     end

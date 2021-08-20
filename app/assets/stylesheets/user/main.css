@@ -192,6 +192,31 @@ body.user footer small {
   text-align: center;
 }
 
+/* flash
+* ========================================================================== */
+body.user .flash {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  padding: 15px;
+  width: 100%;
+  border-bottom: 8px double #66bb66;
+  text-align: center;
+  color: white;
+}
+
+body.user .flash::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #17a277;
+  opacity: 0.8;
+  z-index: -1;
+}
+
 /* main
 * ========================================================================== */
 body.user .main.user {
@@ -381,7 +406,7 @@ body.user .confirm .actions .btn.back {
   background: gray;
 }
 
-/* /users/mypages
+/* /users/mypages#show
 * ========================================================================== */
 body.user .mypage {
   overflow: hidden;
@@ -442,10 +467,73 @@ body.user .mypage .main_menu {
 }
 
 body.user .mypage .main_menu h2 {
-  margin-top: 30px;
   color: rgb(111, 112, 172);
+  margin-bottom: 10px;
 }
 
 body.user .mypage .main_menu .field {
   margin: 30px 0;
+}
+
+/* /users/mypages#edit
+/* /users/mypages#password
+* ========================================================================== */
+body.user .mypage_form .field {
+  padding-right: 30px;
+  text-align: left;
+}
+
+body.user .mypage_form input[type="text"],
+body.user .mypage_form input[type="password"] {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  width: 100%;
+  background: #dcebf0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: .5s;
+}
+
+body.user .mypage_form input[type="text"]:focus,
+body.user .mypage_form input[type="password"]:focus {
+  background: none;
+  border-radius: 0px;
+  border-bottom: 1px solid rgb(111, 112, 172);
+}
+
+body.user .mypage_form .actions {
+  margin-top: 40px;
+  padding: 0px 10px 20px;
+}
+
+body.user .edit_confirm .actions .btn {
+  margin: 0px 15px;
+  height: 40px;
+  width: 180px;
+  background: #03449e;
+  border-radius: 20px;
+  color: white;
+  line-height: 1.8;
+  font-size: 15px;
+  transition: .3s all;
+  outline: none
+}
+
+/* /users/mypages#confirm
+* ========================================================================== */
+body.user .edit_confirm .actions .back {
+  background: gray;
+}
+
+/* /users/mypages#password
+* ========================================================================== */
+
+body.user .mypage.password form {
+  padding-right: 200px;
+}
+
+body.user .mypage.password .error {
+  text-align: left;
 }

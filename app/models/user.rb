@@ -43,7 +43,7 @@ class User < ApplicationRecord
 
     assign_attributes(params, *options)
 
-    result =  update(params, *options) if errors.blank?
+    result = update(params, *options) if errors.blank?
     clean_up_passwords
     result
   end
