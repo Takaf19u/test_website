@@ -1,13 +1,12 @@
 %h1 ユーザー情報 一覧
 
-%div.main_contents
-  %div.flash
-    -if flash[:message].present?
-      %span{style: "display: block;"}= flash[:message]
-    -else
-      %span
-  %div.count= "全 #{@users_count} 件"
-  %div#detail_table
+.main_contents.detail
+  -if flash[:message].present?
+    .flash= flash[:message]
+  -elsif flash[:notice].present?
+    .flash= flash[:notice]
+  #detail_table
+    .count= "全 #{@users_count} 件"
     %table.detail
       %tbody
         %tr
@@ -23,20 +22,20 @@
             %tr
               %td
                 = user.id
-              %td
+              %td.detail
                 = user.email
-              %td
+              %td.detail
                 = l user.current_sign_in_at if user.current_sign_in_at.present?
-              %td
+              %td.detail
                 = l user.created_at
-              %td
+              %td.detail
                 = l user.updated_at
-              %td
+              %td.icon
                 = link_to admin_user_detail_path(id: user.id) do icon("far", "sticky-note") end
-              %td
+              %td.icon
                 = link_to admin_user_detail_path(id: user.id), method: :delete, data: { confirm: I18n.t('message.delete_user') } do
                   = icon("far", "trash-alt")
         -else
           %tr
             %td= I18n.t('message.not_data')
-  %div.pagination= paginate @users
+  .pagination= paginate @users

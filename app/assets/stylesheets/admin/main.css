@@ -8,7 +8,7 @@ body.admin header {
   height: 60px;
   width: 100%;
   padding: 5px 10px;
-  background: #b1d1e5;
+  background: #2f3f4e;
   box-shadow: 0px 3px 3px gray;
   line-height: 3;
 }
@@ -23,25 +23,28 @@ body.admin header .left_menu {
   float: right;
   margin-top: 5px;
   padding: 0px 15px;
-  background: rgb(32, 83, 131);
+  background: #2f3f4e;;
+  border: 1px solid gray;
   border-radius: 5px;
   font-size: 1.2rem;
   color: white;
 }
 
 body.admin header .left_menu:hover {
-  opacity: 0.8;
+  border: 1px solid white;
 }
 
 .main.admin {
-  height: 100%;
+  margin: 0 auto;
   padding: 80px 30px 20px 30px;
+  height: 100%;
+  max-width: 1300px;
 }
 
 .main.admin h1 {
   padding: 20px 0;
-  border-bottom: 4px solid #97b3c4;
-  color: rgb(72, 80, 124);
+  border-bottom: 4px solid #6e879e;
+  color: #6e879e;
 }
 
 /* devise
@@ -56,13 +59,13 @@ body.admin header .left_menu:hover {
 .main.admin .devise_contents h1 {
   text-align: center;
   margin-bottom: 30px;
-  color: #97b3c4;
+  color: #6e879e;
 }
 
 .main.admin .devise_contents form {
   background: white;
   border-radius: 5px;
-  box-shadow: 0px 0px 2px 1px #97b3c4;
+  box-shadow: 0px 0px 2px 1px #6e879e;
 }
 
 .main.admin .devise_contents .field.alert {
@@ -113,7 +116,7 @@ body.admin header .left_menu:hover {
   cursor: pointer;
   padding: 20px 0px;
   width: 100%;
-  background: #80badf;
+  background: #6e879e;
   border: none;
   font-weight: bold;
   color: white;
@@ -121,31 +124,48 @@ body.admin header .left_menu:hover {
 
 .main.admin .devise_contents .actions input[type="submit"]:hover {
   opacity: 0.8;
-  background: #21a1f0;
+  background: #2f3f4e;
 }
 
 /* admin_user_detail
 * ========================================================================== */
 
 .main.admin .main_contents {
+  position: relative;
+  padding-top: 60px;
   text-align: center;
 }
 
+.main.admin .main_contents.detail {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
 .main.admin .main_contents .flash {
-  margin: 20px 0px 10px 0px;
-  height: 40px;
+  position: absolute;
+  top: 10px;
+  padding: 10px;
   width: 100%;
+  text-align: center;
+  color: white;
 }
 
-.main.admin .main_contents .flash span {
+.main.admin .main_contents .flash::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
   height: 100%;
-  background: rgb(250, 250, 164);
-  border-bottom: 1px solid rgb(211, 211, 7);
+  width: 100%;
+  background: #41bac1;
+  border-bottom: 5px double #0c848a;
   border-radius: 5px;
-  line-height: 2.5;
+  opacity: 0.8;
+  z-index: -1;
 }
 
-.main.admin .main_contents div.count {
+.main.admin .main_contents .count {
+  margin-bottom: 5px;
   text-align: left;
   font-weight: bold;
 }
@@ -155,9 +175,12 @@ body.admin header .left_menu:hover {
   text-align: left;
 }
 
+.main.admin #detail_table {
+  overflow-x: scroll;
+}
+
 .main.admin #detail_table table.detail {
   display: block;
-  overflow-x: scroll;
   white-space: nowrap;
   table-layout: fixed;
 }
@@ -171,11 +194,15 @@ body.admin header .left_menu:hover {
   border-bottom: 1px solid rgb(206, 204, 204);
 }
 
-.main.admin #detail_table tr:first-child {
+.main.admin #detail_table tr:first-child,
+.main.admin #detail_table  tr:first-child:hover {
   background: rgb(92, 107, 128);
   color: white;
 }
 
+.main.admin #detail_table  tr:hover {
+  background: lightgray;
+}
 
 .main.admin #detail_table th {
   height: 70px;
@@ -201,7 +228,7 @@ body.admin header .left_menu:hover {
 }
 
 .main.admin .pagination li.active a {
-  background: #80badf;
+  background: #2f3f4e;;
   border-color: #75aaca;
 
 }

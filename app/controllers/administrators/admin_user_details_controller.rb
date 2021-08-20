@@ -4,7 +4,7 @@ class Administrators::AdminUserDetailsController < ApplicationController
 
   def index
     @users_count = User.all.size
-    @users = User.all.page(params[:page]).per(5)
+    @users = User.all.order(id: "DESC").page(params[:page]).per(10)
   end
 
   def show
