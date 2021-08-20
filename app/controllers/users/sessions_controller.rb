@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::SessionsController < Devise::SessionsController
-  # before_action :configure_sign_in_params, only: [:create]
+  after_action :after_login, only: [:create]
 
   # GET /resource/sign_in
   def new
@@ -36,7 +36,13 @@ class Users::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
 
+  private
+
   def user_params
     params.require(:user).permit(:email, :password)
+  end
+
+  def after_login
+    current_user.update(current_sign_in_at: Time.now) if user_signed_in?
   end
 end

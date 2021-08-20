@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   namespace :users do
-    resources :mypages, only: [:show, :edit, :update] do
+    resources :mypages, only: [:index, :show, :edit, :update] do
       get 'password', on: :member
       patch 'password_update', on: :member
       post 'confirm', on: :member
@@ -25,5 +25,6 @@ Rails.application.routes.draw do
     post 'users/sign_up/confirm', to: 'users/registrations#confirm'
   end
 
+  get 'top' => 'users/mypages#index', as: :top
   get '*unmatched_route', :to => 'application#routes_not_found!', format: false
 end

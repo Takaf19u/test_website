@@ -1,0 +1,8 @@
+=render partial: 'users/shared/top_contents', locals: { title: "Appirits 仮TOPページ" , title_en: "Appirits page" }
+.main_contents.top
+  .contents
+    =link_to new_admin_session_path do
+      %p 管理側ログイン
+  .contents
+    =link_to new_user_session_path do
+      %p ユーザー側ログイン

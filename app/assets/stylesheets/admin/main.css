@@ -130,6 +130,11 @@ body.admin header .left_menu:hover {
 /* admin_user_detail
 * ========================================================================== */
 
+.search_contents {
+  margin: 20px auto 10px;
+  max-width: 1000px;
+}
+
 .main.admin .main_contents {
   position: relative;
   padding-top: 60px;
@@ -194,14 +199,18 @@ body.admin header .left_menu:hover {
   border-bottom: 1px solid rgb(206, 204, 204);
 }
 
+.main.admin #detail_table  tr:hover {
+  background: lightgray;
+}
+
 .main.admin #detail_table tr:first-child,
-.main.admin #detail_table  tr:first-child:hover {
+.main.admin #detail_table tr:first-child:hover {
   background: rgb(92, 107, 128);
   color: white;
 }
 
-.main.admin #detail_table  tr:hover {
-  background: lightgray;
+.main.admin #detail_table tr.no_data:hover {
+  background: white;
 }
 
 .main.admin #detail_table th {

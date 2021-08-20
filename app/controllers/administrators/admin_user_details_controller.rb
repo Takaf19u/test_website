@@ -3,8 +3,10 @@ class Administrators::AdminUserDetailsController < ApplicationController
   before_action :authenticate_administrator!
 
   def index
-    @users_count = User.all.size
-    @users = User.all.order(id: "DESC").page(params[:page]).per(10)
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true).order(id: "DESC")
+    @users_count = @users.size
+    @users = @users.page(params[:page]).per(10)
   end
 
   def show

@@ -1,7 +1,7 @@
 %h1 ユーザー情報 詳細
 
-%div.main_contents#user_show
-  %div#user_show_table.clearfix
+.main_contents#user_show
+  #user_show_table.clearfix
     %table.left
       %tr
         %th= I18n.t('attributes.id')
@@ -31,6 +31,6 @@
       %tr
         %th= I18n.t('attributes.updated_at')
         %td= l @user.updated_at
-  %div.buttons
+  .buttons
     = link_to I18n.t('attributes.back'), admin_user_details_path
     = link_to I18n.t('attributes.delete'), admin_user_detail_path(id: @user.id), method: :delete, data: { confirm: I18n.t('message.delete_user') }

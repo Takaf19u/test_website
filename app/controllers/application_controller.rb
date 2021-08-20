@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_out_path_for(resource)
-    resource.eql?(:administrator) ? new_admin_session_path : new_user_session_path
+    resource.eql?(:administrator) ? new_admin_session_path : top_path
   end
 
 
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
     when user_id && password_update_users_mypage_path(user_id)
       redirect_to password_users_mypage_path(user_id)
     else
-      redirect_to new_user_session_path
+      redirect_to top_path
     end
   end
 

@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+  after_action :after_login, only: [:create]
   # GET /resource/sign_up
   def new
     @user = User.new
@@ -96,5 +97,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [ user_detail_attributes: [ :name, :company_name, :department_name, :phone_number] ])
+  end
+
+  def after_login
+    current_user.update(current_sign_in_at: Time.now) if user_signed_in?
   end
 end

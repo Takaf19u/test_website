@@ -63,6 +63,7 @@ gem 'byebug'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'font-awesome-sass'
+gem 'ransack'
 
 #haml
 gem 'haml-rails'
