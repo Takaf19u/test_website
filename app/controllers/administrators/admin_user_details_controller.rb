@@ -7,6 +7,7 @@ class Administrators::AdminUserDetailsController < ApplicationController
     @users = @q.result(distinct: true).order(id: "DESC")
     @users_count = @users.size
     @users = @users.page(params[:page]).per(10)
+    # @current_sign_in_at = [params[:q][:current_sign_in_at_gteq], params[:q][:current_sign_in_at_lteq_end_of_day]]
   end
 
   def show

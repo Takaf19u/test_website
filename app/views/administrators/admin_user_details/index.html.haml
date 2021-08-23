@@ -1,21 +1,30 @@
 %h1 ユーザー情報 一覧
 
 .search_contents
-  = search_form_for @q, url: admin_user_details_path do |f|
-    = f.label :email, I18n.t('attributes.email')
-    = f.search_field :email_cont
-    = f.label :user_detail_company_name, I18n.t('attributes.company_name')
-    = f.search_field :user_detail_company_name_cont
-    = f.label :user_detail_department_name, I18n.t('attributes.department_name')
-    = f.search_field :user_detail_department_name_cont
-    = f.label :user_detail_name, I18n.t('attributes.name')
-    = f.search_field :user_detail_name_cont
-    = f.label :user_detail_phone_number, I18n.t('attributes.phone_number')
-    = f.search_field :user_detail_phone_number_cont
-    = f.label :current_sign_in_at, I18n.t('attributes.current_sign_in_at')
-    = f.text_field :current_sign_in_at_gteq
-    = f.text_field :current_sign_in_at_lteq_end_of_day
-    = f.submit "検索"
+  = search_form_for @q, class: "clearfix", url: admin_user_details_path do |f|
+    .left_menu
+      .field
+        = f.label :email, I18n.t('attributes.email')
+        = f.search_field :email_cont
+      .field
+        = f.label :user_detail_company_name, I18n.t('attributes.company_name')
+        = f.search_field :user_detail_company_name_cont
+      .field
+        = f.label :user_detail_department_name, I18n.t('attributes.department_name')
+        = f.search_field :user_detail_department_name_cont
+    .right_menu
+      .field
+        = f.label :user_detail_name, I18n.t('attributes.name')
+        = f.search_field :user_detail_name_cont
+      .field
+        = f.label :user_detail_phone_number, I18n.t('attributes.phone_number')
+        = f.search_field :user_detail_phone_number_cont
+      .field.sign_in_at
+        = f.label :current_sign_in_at, I18n.t('attributes.current_sign_in_at')
+        = f.date_field :current_sign_in_at_gteq
+        = f.date_field :current_sign_in_at_lteq_end_of_day
+    .actions
+      = f.submit "検索"
 
 .main_contents.detail
   -if flash[:message].present?

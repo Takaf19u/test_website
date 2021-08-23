@@ -100,6 +100,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def after_login
-    current_user.update(current_sign_in_at: Time.now) if user_signed_in?
+    current_user.update(current_sign_in_at: Time.current) if user_signed_in?
   end
 end

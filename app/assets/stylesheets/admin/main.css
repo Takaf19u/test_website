@@ -11,6 +11,7 @@ body.admin header {
   background: #2f3f4e;
   box-shadow: 0px 3px 3px gray;
   line-height: 3;
+  z-index: 999;
 }
 body.admin header img {
   width: 150px;
@@ -35,6 +36,8 @@ body.admin header .left_menu:hover {
 }
 
 .main.admin {
+  float: right;
+  overflow: scroll;
   margin: 0 auto;
   padding: 80px 30px 20px 30px;
   height: 100%;
@@ -45,6 +48,86 @@ body.admin header .left_menu:hover {
   padding: 20px 0;
   border-bottom: 4px solid #6e879e;
   color: #6e879e;
+}
+
+/* side_menu
+* ========================================================================== */
+body.admin #side_menu {
+  float: left;
+  padding-top: 60px;
+  height: 100%;
+  min-width: 200px;
+  font-size: 0;
+  z-index: 998;
+}
+
+.main.admin {
+  float: none;
+}
+
+body.admin #side_menu ul,
+body.admin #side_menu_btn  {
+  display: inline-block;
+  background: #2f3f4e;
+}
+
+body.admin #side_menu li,
+body.admin #side_menu_btn  {
+  font-size: 14px;
+}
+
+body.admin #side_menu li,
+body.admin #side_menu li a {
+  color: white;
+}
+
+body.admin #side_menu ul {
+  padding: 20px 0px;
+  height: 100%;
+  width: 200px;
+}
+
+body.admin #side_menu li {
+  padding: 10px 20px;
+}
+
+body.admin #side_menu li.user {
+  display: block;
+  text-align: center;
+}
+
+body.admin #side_menu li.user .icon {
+  display: inline-block;
+  padding: 20px;
+  background: gray;
+  border-radius: 50%;
+  border: 3px solid rgb(99, 136, 148);
+}
+
+body.admin #side_menu li.user.email {
+  margin: 10px 0px 30px;
+  padding: 0 20px;
+}
+
+body.admin #side_menu li.user.email p {
+  padding-bottom: 10px;
+  width: 100%;
+  border-bottom: 2px solid rgb(99, 136, 148);
+}
+
+body.admin #side_menu svg {
+  height: 50px;
+  width: 50px;
+  color: white;
+}
+
+body.admin #side_menu li a {
+  display: inline-block;
+  width: 100%;
+}
+
+body.admin #side_menu_btn {
+  display: none;
 }
 
 /* devise
@@ -131,8 +214,106 @@ body.admin header .left_menu:hover {
 * ========================================================================== */
 
 .search_contents {
-  margin: 20px auto 10px;
+  margin: 0px auto ;
+  padding: 30px 0 30px;
   max-width: 1000px;
+  border-bottom: 2px solid #6e879e;
+}
+
+.search_contents label {
+  display: block;
+  margin-bottom: 2px;
+  color: rgb(92, 107, 128);
+}
+
+.search_contents form {
+  padding: 0px 10px;
+  width: 100%;
+}
+
+.search_contents input {
+  width: 100%;
+  border: 1px solid #6e879e;
+}
+
+.search_contents input[type="search"],
+.search_contents input[type="date"] {
+  padding: 5px;
+  height: 30px;
+}
+
+.search_contents .sign_in_at input {
+  width: 49.0%;
+}
+
+.search_contents .left_menu {
+  float: left;
+  width: 40%;
+  min-width: 160px;
+}
+
+.search_contents .right_menu {
+  float: right;
+  width: 40%;
+}
+
+.search_contents .field {
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.search_contents .field.sign_in_at input:last-child {
+  float: right;
+}
+
+.search_contents form input[type="date"]{
+  position: relative;
+}
+
+.search_contents form input[type="date"]::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 2px 4px;
+  height: 100%;
+  width: 40px;
+  background: #6b848a;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 13px;
+  color: white;
+}
+
+.search_contents form #q_current_sign_in_at_gteq::before {
+  content: "Start";
+}
+
+.search_contents form #q_current_sign_in_at_lteq_end_of_day::before {
+  content: "End";
+}
+
+.search_contents form input[type=date]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.search_contents form .actions {
+  clear: both;
+  padding-top: 30px;
+  border-radius: 5px;
+}
+
+.search_contents form .actions input[type="submit"] {
+  padding: 8px 0px;
+  border-radius: 5px;
+  color: rgb(92, 107, 128);
+}
+
+.search_contents form .actions input[type="submit"]:hover {
+  background: #6e879e;
+  color: white;
 }
 
 .main.admin .main_contents {
@@ -311,7 +492,98 @@ body.admin header .left_menu:hover {
 
 .main.admin #user_show .buttons a:hover {
   opacity: 0.8;
-  background: #57b9f7;
+  background: #a2c3e2;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+  body.admin {
+    position: relative;
+  }
+
+  body.admin #side_menu {
+    float: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-200px);
+    transition: all .5s;
+  }
+
+  body.admin #side_menu_btn {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    padding: 2px 8px;
+    border-radius: 0 5px 5px 0;
+    font-size: 20px;
+  }
+
+  body.admin #side_menu.open {
+    transform: translate(0);
+  }
+
+  body.admin #side_menu_btn span {
+    display: inline-block;
+    position: relative;
+    width: 15px;
+    height: 2px;
+    background: white;
+    transition: all .5s;
+  }
+
+  body.admin #side_menu_btn span:before {
+    position: absolute;
+    content: "";
+    top: -5px;
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+
+  body.admin #side_menu_btn span:after {
+    position: absolute;
+    content: "";
+    top: -10px;
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+
+  body.admin #side_menu_btn.active span {
+    bottom: 5px;
+    transform: rotate(-45deg);
+  }
+
+  body.admin #side_menu_btn.active span:before {
+    top: 0px;
+    transform: rotate(90deg);
+  }
+
+  body.admin #side_menu_btn.active span:after {
+    display: none;
+  }
+
+  body.admin #menu_background {
+    display: block;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 997;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+
+  body.admin #menu_background.open {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -332,32 +604,32 @@ body.admin header .left_menu:hover {
   .main.admin #user_show_table table.right tr:last-child {
     border-bottom: none;
   }
-
-  .main.admin #user_show .buttons a {
-  }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 620px) {
 
-  .main.admin #user_show_table {
-    padding-right: 10px;
+  .search_contents .left_menu,
+  .search_contents .right_menu {
+    float: none;
   }
 
-  .main.admin #user_show_table table {
-    width: 100%;
-  }
-
-
-  .main.admin #user_show_table table.left tr:last-child {
-    border-bottom: 1px solid gray;
-  }
-
-  .main.admin #user_show_table table.right tr:last-child {
-    border-bottom: none;
+  .search_contents .left_menu,
+  .search_contents .right_menu,
+  .search_contents form .actions {
+    margin: 0 auto;
+    width: 80%;
   }
 }
 
 @media screen and (max-width: 479px) {
+
+  .search_contents form .sign_in_at input{
+    width: 100%;
+  }
+
+  .search_contents form #q_current_sign_in_at_gteq {
+    margin-bottom: 10px;
+  }
 
   .main.admin #user_show_table {
     width: 100%;
@@ -396,5 +668,13 @@ body.admin header .left_menu:hover {
 
   .main.admin #user_show .buttons a:first-child {
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search_contents .left_menu,
+  .search_contents .right_menu,
+  .search_contents form .actions {
+    width: 100%;
   }
 }

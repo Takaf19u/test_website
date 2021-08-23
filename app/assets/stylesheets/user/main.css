@@ -492,7 +492,6 @@ body.user .mypage_form input[type="password"] {
   background: #dcebf0;
   border: none;
   border-radius: 5px;
-  outline: none;
   transition: .5s;
 }
 

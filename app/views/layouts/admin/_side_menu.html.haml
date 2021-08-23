@@ -1,0 +1,13 @@
+#side_menu
+  %ul
+    %li.user
+      .icon= icon("fas", "user")
+    %li.user.email
+      %p= current_user.email
+    %li
+      =link_to "#{I18n.t("attributes.title.mypage_detail")} 一覧", admin_user_details_path
+    %li
+      =link_to I18n.t('attributes.logout'), destroy_admin_session_path, method: :delete, class: "left_menu"
+  #side_menu_btn
+    %span
+#menu_background
