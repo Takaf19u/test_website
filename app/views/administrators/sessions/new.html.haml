@@ -9,12 +9,14 @@
         %p.alert= @errors["password"]
     .field.input
       = f.label :email
-      %br/
+      %br
       = f.text_field :email, autofocus: true, autocomplete: "email"
-    .field.input
+    .field.password.input
       = f.label :password
-      %br/
+      %br
       = f.text_field :password, type: :password, autocomplete: "current-password"
+      %input{type:"checkbox", class: "js-password"}
+      = icon("far", "eye")
     - if devise_mapping.rememberable?
       .field.remenber_me
         = f.check_box :remember_me

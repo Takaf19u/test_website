@@ -12,6 +12,6 @@
     %script{src: "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
   %body.admin
     =render partial: 'layouts/admin/header'
-    =render partial: 'layouts/admin/side_menu'
+    =render partial: 'layouts/admin/side_menu' if administrator_signed_in?
     .main.admin
       = yield

@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :administrators, module: "administrators"
   devise_for :users, module: "users"
 
+  root to: 'users/mypages#index'
+  
   scope module: :administrators do
     resources :admin_user_details, only: [:index, :show, :destroy]
   end
@@ -15,7 +17,6 @@ Rails.application.routes.draw do
   end
 
   devise_scope :administrator do
-    root to: 'administrators/sessions#new'
     get 'admin/login' => 'administrators/sessions#new', as: :new_admin_session
     post 'admin/login' => 'administrators/sessions#create', as: :admin_session
     delete 'admin/sign_out' => 'administrators/sessions#destroy', as: :destroy_admin_session

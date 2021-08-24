@@ -9,10 +9,14 @@ class ApplicationController < ActionController::Base
 
 
   def routes_not_found!
-    /^\/users/.match?(request.path) ? users_redirect : admin_redirect
+    /^\/admin/.match?(request.path) ? admin_redirect : users_redirect
   end
 
   private
+
+  def admin_redirect
+    redirect_to new_admin_session_path
+  end
 
   def users_redirect
     user_id = current_user&.id
@@ -26,9 +30,5 @@ class ApplicationController < ActionController::Base
     else
       redirect_to top_path
     end
-  end
-
-  def admin_redirect
-    redirect_to new_admin_session_path
   end
 end

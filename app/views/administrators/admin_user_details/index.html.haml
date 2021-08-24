@@ -23,6 +23,8 @@
         = f.label :current_sign_in_at, I18n.t('attributes.current_sign_in_at')
         = f.date_field :current_sign_in_at_gteq
         = f.date_field :current_sign_in_at_lteq_end_of_day
+        -if flash[:alert].present?
+          .error= flash[:alert]
     .actions
       = f.submit "検索"
 

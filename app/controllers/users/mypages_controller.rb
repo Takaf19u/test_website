@@ -18,7 +18,7 @@ class Users::MypagesController < ApplicationController
   def confirm
     @user = User.new(user_params)
     @user.id = current_user.id
-    @user.user_detail.format_phone_number
+    @user.user_detail.phone_number = @user.user_detail.format_phone_number
     return render :edit if @user.invalid?(:email_all_checks)
   end
 
@@ -40,7 +40,7 @@ class Users::MypagesController < ApplicationController
   def password_update
     if current_user.update_with_password(password_params)
       sign_in(current_user, bypass: true)
-      redirect_to users_mypage_path(current_user.id)
+      redirect_to users_mypage_path(current_user.id), flash: { notice: I18n.t("message.complete_password") }
     else
       render :password
     end

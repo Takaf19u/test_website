@@ -6,15 +6,19 @@
   = form_with model: @user, url: users_sign_up_confirm_path(@user), local: true do |f|
     .input_form
       =render partial: 'users/shared/user_input_form', locals: { user: @user, f: f }
-      .field
+      .field.password
         = f.label :password
         %br
         = f.password_field :password, autocomplete: "new-password", placeholder: I18n.t("attributes.placeholder.password")
         = render partial: "users/shared/error_messages", locals: { errors: @user.errors.full_messages_for("password") }
-      .field
+        %input{type:"checkbox", class: "js-password"}
+        = icon("far", "eye")
+      .field.password
         = f.label :password_confirmation
         %br
         = f.password_field :password_confirmation
+        %input{type:"checkbox", class: "js-password"}
+        = icon("far", "eye")
     .actions
       = link_to I18n.t("attributes.login"), new_user_session_path, class: "btn"
       = f.submit I18n.t("attributes.confirm"), class: "btn"

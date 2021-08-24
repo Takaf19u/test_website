@@ -11,6 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def confirm
     @user = User.new(user_params)
+    @user.user_detail.phone_number = @user.user_detail.format_phone_number
     return render :new if @user.invalid?([:email_all_checks, :password_all_checks])
   end
 

@@ -3,7 +3,7 @@
     %li.user
       .icon= icon("fas", "user")
     %li.user.email
-      %p= current_user.email
+      %p= current_administrator.email
     %li
       =link_to "#{I18n.t("attributes.title.mypage_detail")} 一覧", admin_user_details_path
     %li

@@ -3,11 +3,11 @@ class Administrators::AdminUserDetailsController < ApplicationController
   before_action :authenticate_administrator!
 
   def index
+    flash.now[:alert] = I18n.t("errors.messages.correct_current_sign_in_at") unless User.correct_current_sign_in_at?(params[:q])
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true).order(id: "DESC")
     @users_count = @users.size
     @users = @users.page(params[:page]).per(10)
-    # @current_sign_in_at = [params[:q][:current_sign_in_at_gteq], params[:q][:current_sign_in_at_lteq_end_of_day]]
   end
 
   def show

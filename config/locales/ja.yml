@@ -136,6 +136,7 @@ ja:
       phone_number_format: は10〜11桁で入力してください
       password_format: は半角英数字で入力してください
       password_confirmation: と再入力したパスワードが一致しません
+      correct_current_sign_in_at: 終了日が開始日よりも過去の日付となっています
     template:
       body: 次の項目を確認してください
       header:
@@ -257,6 +258,7 @@ ja:
     delete_user_success: '削除が正常に完了しました'
     not_data: '登録データが存在しません。'
     complete_user_edit: 'ユーザー情報を更新しました'
+    complete_password: 'パスワードを更新しました'
 
 
 

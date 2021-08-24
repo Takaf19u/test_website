@@ -223,6 +223,38 @@ body.user .main.user {
   min-width: 1300px;
 }
 
+.field.password {
+  position: relative;
+}
+
+.field.password svg,
+.field.password .js-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  height: 22px;
+  width: 22px;
+}
+
+.field.password svg {
+  color: gray;
+}
+
+.field.password .js-password {
+  opacity: 0;
+  cursor: pointer;
+  margin: 0;
+  z-index: 1;
+}
+
+.field.password svg {
+  color: gray;
+}
+
+.field.password .js-password:checked + svg {
+  color: rgb(74, 119, 202);
+}
+
 /* top_contents
 * ========================================================================== */
 body.user .top_contents {
@@ -341,10 +373,20 @@ body.user .input_form input[type="text"],
 body.user .input_form input[type="password"] {
   padding: 5px;
   width: 100%;
+  outline: none;
 }
 
 body.user .login .input_form input[type="text"] {
   margin-bottom: 20px;
+}
+
+body.user .login .input_form .field.password input[type="text"] {
+  margin-bottom: 0px;
+}
+
+body.user .sign_up .input_form .field.password svg,
+body.user .sign_up .input_form .field.password .js-password {
+  top: 50px;
 }
 
 body.user form .actions {
@@ -478,8 +520,8 @@ body.user .mypage .main_menu .field {
 /* /users/mypages#edit
 /* /users/mypages#password
 * ========================================================================== */
-body.user .mypage_form .field {
-  padding-right: 30px;
+body.user .mypage.password .mypage_form .field {
+  margin-right: 30px;
   text-align: left;
 }
 
@@ -493,6 +535,7 @@ body.user .mypage_form input[type="password"] {
   border: none;
   border-radius: 5px;
   transition: .5s;
+  outline: none;
 }
 
 body.user .mypage_form input[type="text"]:focus,
@@ -500,6 +543,11 @@ body.user .mypage_form input[type="password"]:focus {
   background: none;
   border-radius: 0px;
   border-bottom: 1px solid rgb(111, 112, 172);
+}
+
+body.user .mypage.password .field.password .js-password,
+body.user .mypage.password .field.password svg {
+  top: 10px;
 }
 
 body.user .mypage_form .actions {

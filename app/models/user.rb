@@ -47,4 +47,9 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
+  def self.correct_current_sign_in_at?(q)
+    return true if q.blank?
+    q[:current_sign_in_at_gteq] <= q[:current_sign_in_at_lteq_end_of_day]
+  end
 end

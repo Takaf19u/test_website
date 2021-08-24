@@ -39,5 +39,14 @@ document.addEventListener("turbolinks:load", function() {
         $('#side_menu').removeClass('open');
       }
     });
+
+    // パスワードの表示/非表示
+    $('.js-password').on('change', function(){
+      if ( $(this).prop('checked') ) {
+        $(this).siblings('input[type="password"]').attr('type','text');
+      } else {
+        $(this).siblings('input[type="text"]').attr('type','password');
+      }
+    });
   });
 });
