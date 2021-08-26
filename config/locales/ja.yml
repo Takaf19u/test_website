@@ -217,11 +217,16 @@ ja:
     password: パスワード
     confirm_password: パスワードを確認
     remember_me: ログイン状態を保持
+    notice_title: タイトル
+    notice_tag: お知らせ種別
+    notice_content: お知らせ内容
     current_sign_in_at: 最終ログイン日
+    created_user: 作成者
     created_at: 作成日
     updated_at: 更新日
     started_at: 検索開始日
     exited_at: 検索終了日
+    search: 検索
     detail: 詳細
     edit: 編集
     update: 更新
@@ -242,8 +247,12 @@ ja:
       now_password: 現在のパスワード
       new_password: 新しいパスワード
       re_password: 新しいパスワードを再入力
-    title:
+      notice_title: 30文字まで
+      notice_content: 500文字まで
+    titles:
       mypage_detail: ユーザー情報
+      notice: お知らせ
+      notice_new: お知らせ 新規登録
       login: ログイン
       login_en: Log in
       new: 新規登録
@@ -252,13 +261,18 @@ ja:
       confirm_en: Confirmation of input contents
       mypage: マイページ
       mypage_en: Mypage
+    notice_tags:
+      job: 求人のお知らせ
+      other: その他のお知らせ
   message:
     delete_user: 'ユーザーの削除を実行しますか？'
+    delete_notice: 'お知らせの削除を実行しますか？'
     change_password: 'パスワードを変更しますか？'
-    delete_user_success: '削除が正常に完了しました'
+    delete_success: '削除が正常に完了しました'
     not_data: '登録データが存在しません。'
     complete_user_edit: 'ユーザー情報を更新しました'
     complete_password: 'パスワードを更新しました'
+    complete_notice: 'お知らせを作成しました'
 
 
 

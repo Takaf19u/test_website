@@ -17,6 +17,6 @@ class Administrators::AdminUserDetailsController < ApplicationController
   def destroy
     user = User.find(params[:id])
     user.destroy
-    redirect_to admin_user_details_path, flash: { message: I18n.t("message.delete_user_success") }
+    redirect_to admin_user_details_path, flash: { message: I18n.t("message.delete_success") }
   end
 end

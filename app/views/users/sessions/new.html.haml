@@ -1,7 +1,7 @@
-=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.title.login"),
-                                                               title_en: I18n.t("attributes.title.login_en") }
-=render partial: 'users/shared/page_tabs', locals: { tabs: { I18n.t("attributes.title.login") =>  new_user_session_path,
-                                                             I18n.t("attributes.title.new") =>  new_user_registration_path } }
+=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.titles.login"),
+                                                               title_en: I18n.t("attributes.titles.login_en") }
+=render partial: 'users/shared/page_tabs', locals: { tabs: { I18n.t("attributes.titles.login") =>  new_user_session_path,
+                                                             I18n.t("attributes.titles.new") =>  new_user_registration_path } }
 .main_contents.login
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .input_form

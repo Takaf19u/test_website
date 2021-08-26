@@ -1,8 +1,8 @@
-=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.title.mypage"),
-                                                               title_en: I18n.t("attributes.title.mypage_en") }
+=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.titles.mypage"),
+                                                               title_en: I18n.t("attributes.titles.mypage_en") }
 .main_contents.mypage.edit
   .main_menu
-    %h2= "#{I18n.t("attributes.title.mypage_detail")} #{I18n.t("attributes.edit")}"
+    %h2= "#{I18n.t("attributes.titles.mypage_detail")} #{I18n.t("attributes.edit")}"
     = form_with model: @user, url: confirm_users_mypage_path(current_user.id), method: "post", local: true do |f|
       .mypage_form
         =render partial: 'users/shared/user_input_form', locals: { user: @user, f: f }

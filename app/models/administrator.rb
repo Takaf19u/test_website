@@ -4,6 +4,8 @@ class Administrator < ApplicationRecord
   devise :database_authenticatable, :registerable, :timeoutable,
          :recoverable, :rememberable
 
+  has_many :notifications
+
   VALID_PASSWORD_REGEX = /\A[a-z0-9]+\z/i
   validates :email, presence: true
   validates :email, uniqueness: true, length: { minimum: 8 }, on: :save

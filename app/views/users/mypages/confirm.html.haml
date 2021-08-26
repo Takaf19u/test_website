@@ -1,9 +1,9 @@
 
-=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.title.mypage"),
-                                                               title_en: I18n.t("attributes.title.mypage_en") }
+=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.titles.mypage"),
+                                                               title_en: I18n.t("attributes.titles.mypage_en") }
 .main_contents.mypage.edit_confirm
   .main_menu
-    %h2= "#{I18n.t("attributes.title.confirm")}"
+    %h2= "#{I18n.t("attributes.titles.confirm")}"
     = form_with model: @user, url: users_mypage_path(current_user.id), method: "patch", local: true do |f|
       .mypage_form
         =render partial: 'users/shared/user_form', locals: { user: @user }

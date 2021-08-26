@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_041534) do
+ActiveRecord::Schema.define(version: 2021_08_24_071026) do
 
   create_table "administrators", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -25,6 +25,16 @@ ActiveRecord::Schema.define(version: 2021_08_10_041534) do
     t.index ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true
   end
 
+  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "title", null: false
+    t.text "content", null: false
+    t.integer "tag", null: false
+    t.bigint "administrator_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["administrator_id"], name: "index_notifications_on_administrator_id"
+  end
+
   create_table "user_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "company_name", null: false
     t.string "department_name"
@@ -34,6 +44,15 @@ ActiveRecord::Schema.define(version: 2021_08_10_041534) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_user_details_on_user_id"
+  end
+
+  create_table "user_notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.boolean "other", null: false
+    t.boolean "job", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_user_notifications_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -49,5 +68,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_041534) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "notifications", "administrators"
   add_foreign_key "user_details", "users"
+  add_foreign_key "user_notifications", "users"
 end

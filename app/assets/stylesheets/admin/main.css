@@ -365,14 +365,11 @@ body.admin #side_menu_btn {
   text-align: left;
 }
 
-.main.admin #detail_table {
-  overflow-x: scroll;
-}
-
 .main.admin #detail_table table.detail {
   display: block;
   white-space: nowrap;
   table-layout: fixed;
+  overflow-x: scroll;
 }
 
 .main.admin #detail_table tbody {
@@ -421,7 +418,12 @@ body.admin #side_menu_btn {
   color: #75aaca;
 }
 
-.main.admin .pagination li.active a {
+.main.admin div.pagination {
+  width: 100%;
+  text-align: center;
+}
+
+.main.admin ul.pagination li.active a {
   background: #2f3f4e;;
   border-color: #75aaca;
 
@@ -484,10 +486,10 @@ body.admin #side_menu_btn {
   display: inline-block;
   padding: 10px;
   width: 200px;
-  background: gray;
+  border: 1px solid #6e879e;
   text-align: center;
   font-size: 1.2em;
-  color: white;
+  color: #6e879e;
 }
 
 .main.admin #user_show .buttons a:first-child {
@@ -495,11 +497,169 @@ body.admin #side_menu_btn {
 }
 
 .main.admin #user_show .buttons a:hover {
-  opacity: 0.8;
-  background: #a2c3e2;
+  background: #6e879e;
+  color: white;
 }
 
+/* admin/notifications
+* ========================================================================== */
 
+.main.admin {
+  position: relative;
+}
+
+.main.admin > a {
+  position: absolute;
+  top: 90px;
+  right: 30px;
+  padding: 10px 20px;
+  background: lightgray;
+  border: 1px solid #6e879e;
+  border-radius: 5px;
+  color: #6e879e;
+}
+
+.main.admin > a:hover {
+  background: #6e879e;
+  color: white;
+}
+
+.main.admin .search_contents.notice select {
+  padding: 5px;
+  height: 30px;
+  width: 100%;
+  border: 1px solid #6e879e;
+}
+
+.main.admin .main_contents.notice td.title {
+  width: 100%;
+}
+
+/* admin/notifications#show
+* ========================================================================== */
+
+.main_contents.notice#show,
+.main_contents.notice#new {
+  padding-top: 40px;
+  text-align: left;
+}
+
+.main_contents.notice {
+  margin: 0px 20px;
+}
+
+.main_contents.notice .input_form {
+  padding: 5px 30px;
+  background: white;
+  box-shadow: 0px -5px 3px 0px lightgrey;
+}
+
+.main_contents.notice .input_form .field {
+  margin: 30px 0px;
+}
+
+.main_contents.notice .input_form .text_area {
+  padding: 10px;
+  width: 100%;
+  background: #f0f7f7;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.main_contents.notice .input_form .radios {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.main_contents.notice .input_form label.tag {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  vertical-align: top;
+  color: black;
+}
+
+.main_contents.notice form .actions {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 2px solid lightgray;
+  text-align: right;
+
+}
+
+.main_contents.notice form .actions a {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #6e879e;
+  text-align: center;
+  font-size: 1.2em;
+  color: rgb(92, 107, 128);
+}
+
+.main_contents.notice form .actions a:hover {
+  background: #6e879e;
+  color:
+  white;
+}
+
+/* admin/notifications#new
+* ========================================================================== */
+.main_contents.notice#new .field {
+  position: relative;
+}
+
+.main_contents.notice#new .input_form .cnt_area {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.main_contents.notice#new .input_form .cnt_area.max {
+  color: red;
+}
+
+.main_contents.notice#new .field.title {
+  width: 40%;
+  min-width: 200px;
+}
+
+.main_contents.notice#new .input_form input[type="text"] {
+  padding: 5px;
+  height: 40px;
+  width: 100%;
+  border: 1px solid lightgray;
+}
+
+.main_contents.notice .input_form textarea {
+  display: block;
+  resize: both;
+  padding: 10px;
+  max-width: 100%;
+  min-width: 100%;
+  background: #f0f7f7;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.main_contents.notice#new .actions input[type="submit"] {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #6e879e;
+  text-align: center;
+  font-size: 1.2em;
+  color: rgb(92, 107, 128);
+}
+
+.main_contents.notice#new .actions input[type="submit"]:hover {
+  background: #6e879e;
+  color:white;
+}
+
+/* SP
+* ========================================================================== */
 @media screen and (max-width: 1200px) {
 
   body.admin {
@@ -622,6 +782,11 @@ body.admin #side_menu_btn {
   .search_contents form .actions {
     margin: 0 auto;
     width: 80%;
+  }
+
+  .main_contents.notice#show .actions a {
+    margin: 5px 0px;
+    width: 100%;
   }
 }
 

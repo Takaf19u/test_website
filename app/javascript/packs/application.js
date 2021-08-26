@@ -48,5 +48,32 @@ document.addEventListener("turbolinks:load", function() {
         $(this).siblings('input[type="text"]').attr('type','password');
       }
     });
+
+    // textarea文字数カウント
+    $('.js-count').on('input', function(){
+      //文字数を取得
+      var cnt = el_length($(this));
+      var cnt_area = $(this).siblings('.cnt_area');
+      var max_cnt = $(this).data('length');
+      //現在の文字数を表示
+      cnt_area.children('span').text(cnt);
+      if(max_cnt > cnt){
+        cnt_area.removeClass('max');
+      }else{
+        cnt_area.addClass('max');
+      }
+    });
+
+    function el_length(el) {
+      var type = el.prop("tagName");
+      if(type == "DIV"){
+        return el.html().length
+      }else{
+        return el.val().length
+      }
+    }
+
+    // textareaリロード時に初期文字列が入っていた時の対策
+    $('.js-count').trigger('input');
   });
 });

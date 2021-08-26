@@ -3,9 +3,16 @@ Rails.application.routes.draw do
   devise_for :users, module: "users"
 
   root to: 'users/mypages#index'
-  
+
   scope module: :administrators do
     resources :admin_user_details, only: [:index, :show, :destroy]
+    scope :admin do
+      resources :notifications do
+        post 'confirm', on: :collection
+        # get 'new', on: :collection
+        # get 'show', on: :member
+      end
+    end
   end
 
   namespace :users do

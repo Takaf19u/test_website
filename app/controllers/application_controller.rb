@@ -15,7 +15,12 @@ class ApplicationController < ActionController::Base
   private
 
   def admin_redirect
-    redirect_to new_admin_session_path
+    case request.path
+    when confirm_notifications_path
+      redirect_to new_notification_path
+    else
+      redirect_to new_admin_session_path
+    end
   end
 
   def users_redirect

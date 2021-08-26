@@ -1,7 +1,7 @@
-=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.title.new"),
-                                                               title_en: I18n.t("attributes.title.new_en") }
-=render partial: 'users/shared/page_tabs', locals: { tabs: { I18n.t("attributes.title.login") =>  new_user_session_path,
-                                                             I18n.t("attributes.title.new") =>  new_user_registration_path } }
+=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.titles.new"),
+                                                               title_en: I18n.t("attributes.titles.new_en") }
+=render partial: 'users/shared/page_tabs', locals: { tabs: { I18n.t("attributes.titles.login") =>  new_user_session_path,
+                                                             I18n.t("attributes.titles.new") =>  new_user_registration_path } }
 .main_contents.sign_up
   = form_with model: @user, url: users_sign_up_confirm_path(@user), local: true do |f|
     .input_form

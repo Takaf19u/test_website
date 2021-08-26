@@ -1,0 +1,23 @@
+%h1= "#{I18n.t("attributes.titles.notice")} 詳細"
+.main_contents.notice#show
+  = form_with model: @notice, local: true do |f|
+    .input_form
+      .field
+        = f.label :notice_title
+        %p= @notice.title
+      .field
+        = f.label :notice_content
+        .text_area= @notice.content
+      .field
+        = f.label :notice_tag
+        %p= I18n.t("attributes.notice_tags.#{@notice.tag}")
+      .field
+        = f.label :created_user
+        %p= @notice.administrator.email
+      .field
+        = f.label :created_at
+        %p= l @notice.created_at
+
+    .actions
+      = link_to I18n.t("attributes.back"), notifications_path
+      = link_to "削除", notification_path(@notice.id), method: :delete, data: { confirm: I18n.t('message.delete_notice') }

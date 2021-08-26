@@ -1,0 +1,63 @@
+%h1 お知らせ 一覧
+=link_to "#{I18n.t("attributes.new")}", new_notification_path
+.search_contents.notice
+  = search_form_for @q, class: "clearfix", url: notifications_path do |f|
+    .left_menu
+      .field
+        = f.label :title, I18n.t('attributes.notice_title')
+        = f.search_field :title_cont
+      .field
+        = f.label :tag, I18n.t('attributes.notice_tag')
+        = f.select :tag_cont, options_for_select( Notification.tags.map{|k, v| [ I18n.t("attributes.notice_tags.#{k}"), v ]}, @select), include_blank: true
+    .right_menu
+      .field
+        = f.label :administrator_email, I18n.t('attributes.created_user')
+        = f.search_field :administrator_email_cont
+      .field
+        = f.label :content, I18n.t('attributes.notice_content')
+        = f.search_field :content_cont
+    .actions
+      = f.submit I18n.t('attributes.search')
+
+.main_contents.detail.notice
+  -if flash[:message].present?
+    .flash= flash[:message]
+  -elsif flash[:notice].present?
+    .flash= flash[:notice]
+  #detail_table
+    .count= "全 #{@notices_count} 件"
+    %table.detail
+      %tbody
+        %tr
+          %th= I18n.t('attributes.id')
+          %th= I18n.t('attributes.notice_title')
+          %th= I18n.t('attributes.notice_tag')
+          %th= I18n.t('attributes.created_user')
+          %th= I18n.t('attributes.created_at')
+          %th= I18n.t('attributes.updated_at')
+          %th.icon= I18n.t('attributes.detail')
+          %th.icon= I18n.t('attributes.delete')
+        -if @notices.present?
+          -@notices.each do |notice|
+            %tr
+              %td
+                = notice.id
+              %td.title
+                = notice.title
+              %td
+                = I18n.t("attributes.notice_tags.#{notice.tag}")
+              %td
+                = notice.administrator.email
+              %td
+                = l notice.created_at
+              %td
+                = l notice.updated_at
+              %td.icon
+                = link_to notification_path(notice.id) do icon("far", "sticky-note") end
+              %td.icon
+                = link_to notification_path(notice.id), method: :delete, data: { confirm: I18n.t('message.delete_user') } do
+                  = icon("far", "trash-alt")
+        -else
+          %tr.no_data
+            %td= I18n.t('message.not_data')
+  .pagination= paginate @notices

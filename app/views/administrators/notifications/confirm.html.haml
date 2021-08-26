@@ -1,0 +1,19 @@
+%h1 お知らせ 新規登録 確認
+.main_contents.notice#new
+  = form_with model: @notice, url: notifications_path, local: true do |f|
+    .input_form
+      .field
+        %label= I18n.t("attributes.notice_title")
+        %p= @notice.title
+      .field
+        %label= I18n.t("attributes.notice_content")
+        .text_area= @notice.content
+      .field
+        %label= I18n.t("attributes.notice_tag")
+        %p= I18n.t("attributes.notice_tags.#{@notice.tag}")
+      = f.hidden_field :title, value: @notice.title
+      = f.hidden_field :content, value: @notice.content
+      = f.hidden_field :tag, value: @notice.tag
+    .actions
+      = f.submit I18n.t("attributes.back"), class: "btn back", name: :back
+      = f.submit I18n.t("attributes.registration"), class: "btn"

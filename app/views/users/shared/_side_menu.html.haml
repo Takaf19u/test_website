@@ -2,10 +2,10 @@
   %ul
     %li
       =icon("far", "user")
-      =link_to I18n.t("attributes.title.mypage_detail"), users_mypage_path(current_user.id)
+      =link_to I18n.t("attributes.titles.mypage_detail"), users_mypage_path(current_user.id)
     %li
       =icon("far", "edit")
-      =link_to "#{I18n.t("attributes.title.mypage_detail")} #{I18n.t("attributes.edit")}", edit_users_mypage_path(current_user.id)
+      =link_to "#{I18n.t("attributes.titles.mypage_detail")} #{I18n.t("attributes.edit")}", edit_users_mypage_path(current_user.id)
     %li
       =icon("fa", "key")
       =link_to "#{I18n.t("attributes.password")} #{I18n.t("attributes.edit")}", password_users_mypage_path(current_user.id)

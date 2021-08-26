@@ -601,11 +601,16 @@ a, a:hover, a:active {
   margin-top: 0px;
 }
 
+input[type=radio] {
+  margin: 0;
+}
+
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=tel]:focus,
 input[type=search]:focus,
 input[type=url]:focus,
+select:focus,
 textarea:focus {
 	background-color: white;
   outline: none;

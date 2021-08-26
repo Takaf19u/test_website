@@ -1,0 +1,28 @@
+%h1= I18n.t("attributes.titles.notice_new")
+.main_contents.notice#new
+  = form_with model: @notice, url: confirm_notifications_path, local: true do |f|
+    .input_form
+      .field.title
+        = f.label :notice_title, for: :title
+        .cnt_area
+          %span= "0"
+          = "/ 30"
+        %br
+        = f.text_field :title, maxlength: 30, data: {length: "30"}, placeholder: I18n.t("attributes.placeholder.notice_title"), autofocus: true, class: "js-count"
+      .field
+        = f.label :notice_content
+        .cnt_area
+          %span= "0"
+          = "/ 500"
+        %br
+        = f.text_area :content, maxlength: 500, data: {length: "500"}, placeholder: I18n.t("attributes.placeholder.notice_content"), class: "js-count"
+      .field
+        = f.label :notice_tag
+        %br
+        - Notification.tags.each do |k, v|
+          .radios
+            = f.radio_button :tag, k
+            = f.label I18n.t("attributes.notice_tags.#{k}"), for: "notification_tag_#{k}", class: "tag"
+    .actions
+      = link_to I18n.t("attributes.back"), notifications_path
+      = f.submit I18n.t("attributes.confirm")
