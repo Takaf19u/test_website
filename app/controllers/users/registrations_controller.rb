@@ -5,7 +5,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
-    @user.build_user_detail
+    test = @user.build_user_detail
+    test.build_user_notification
     # super
   end
 
@@ -13,6 +14,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(user_params)
     @user.user_detail.phone_number = @user.user_detail.format_phone_number
     return render :new if @user.invalid?([:email_all_checks, :password_all_checks])
+    @select_notice = params[:user][:user_detail_attributes][:user_notification_attributes]
   end
 
   # POST /resource
@@ -93,11 +95,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation, user_detail_attributes: [ :name, :company_name, :department_name, :phone_number])
+    params.require(:user).permit(:email, :password, :password_confirmation, user_detail_attributes: [ :name, :company_name, :department_name, :phone_number, user_notification_attributes: [ :other, :job ]])
    end
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [ user_detail_attributes: [ :name, :company_name, :department_name, :phone_number] ])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [ user_detail_attributes: [ :name, :company_name, :department_name, :phone_number, user_notification_attributes: [ :other, :job ] ] ])
   end
 
   def after_login

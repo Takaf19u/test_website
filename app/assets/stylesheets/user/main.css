@@ -354,9 +354,8 @@ body.user .confirm {
 body.user .input_form {
   padding: 40px 10px;
   background: #f7f4f4;
-  box-shadow: 0px 0px 10px 1px grey;
-  border: 5px solid white;
-  border-radius: 5px;
+  border-top: 8px solid #003f65;
+  border-bottom: 8px solid #003f65;
 }
 
 body.user .input_form .field {
@@ -367,6 +366,10 @@ body.user .input_form .field {
 
 body.user .input_form .error {
   margin-bottom: 5px;
+}
+
+body.user .input_form .field.notice .checkbox label {
+  margin-top: 0px;
 }
 
 body.user .input_form input[type="text"],
@@ -433,19 +436,30 @@ body.user .confirm .input_form {
 }
 
 body.user .confirm .field {
-  margin: 10px auto;
+  margin: 10px auto 30px;
   width: 300px;
   text-align: left;
 }
 
 body.user .confirm .field p {
-  margin-bottom: 30px;
   padding-bottom: 5px;
   border-bottom: 1px solid lightgray;
 }
 
+body.user .confirm .field.notice p {
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+
 body.user .confirm .actions .btn.back {
   background: gray;
+}
+
+
+/* /users/mypages#mypage
+* ========================================================================== */
+body.user .main_contents.mypage .field {
+  text-align: left;
 }
 
 /* /users/mypages#show
@@ -549,6 +563,11 @@ body.user .mypage.password .field.password .js-password,
 body.user .mypage.password .field.password svg {
   top: 10px;
 }
+
+body.user .mypage_form .field.notice label {
+  padding: 0px;
+}
+
 
 body.user .mypage_form .actions {
   margin-top: 40px;

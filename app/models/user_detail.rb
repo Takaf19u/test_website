@@ -1,5 +1,7 @@
 class UserDetail < ApplicationRecord
   belongs_to :user
+  has_one :user_notification, dependent: :destroy, inverse_of: :user_detail
+  accepts_nested_attributes_for :user_notification
   VALID_PHONE_REGEX = /\A\d{10,11}\z/
 
   validates :company_name, :name, :phone_number, presence: true

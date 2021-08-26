@@ -20,6 +20,7 @@ class Users::MypagesController < ApplicationController
     @user.id = current_user.id
     @user.user_detail.phone_number = @user.user_detail.format_phone_number
     return render :edit if @user.invalid?(:email_all_checks)
+    @select_notice = params[:user][:user_detail_attributes][:user_notification_attributes]
   end
 
   def update
@@ -49,7 +50,7 @@ class Users::MypagesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, user_detail_attributes: [ :name, :company_name, :department_name, :phone_number])
+    params.require(:user).permit(:email, user_detail_attributes: [ :name, :company_name, :department_name, :phone_number, user_notification_attributes: [ :other, :job ]])
   end
 
   def password_params

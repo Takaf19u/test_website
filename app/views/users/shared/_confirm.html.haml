@@ -3,4 +3,7 @@
   = detail.hidden_field :company_name, value: user.user_detail.company_name
   = detail.hidden_field :department_name, value: user.user_detail.department_name
   = detail.hidden_field :phone_number, value: user.user_detail.phone_number
+  = detail.fields_for :user_notification do |notice|
+    - Notification.tags.each_key do |k|
+      = notice.hidden_field k.to_sym, value: @select_notice[k]
 = f.hidden_field :email, value: user.email

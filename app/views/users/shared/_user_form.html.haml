@@ -10,6 +10,11 @@
 .field
   %label= I18n.t("attributes.phone_number")
   %p= @user.user_detail.phone_number
+.field.notice
+  %label= I18n.t("attributes.select_notice")
+  - Notification.tags.each_key do |k|
+    -if @user.user_detail.user_notification[k]
+      %p= I18n.t("attributes.notice_tags.#{k}")
 .field
   %label= I18n.t("attributes.email")
   %p= @user.email

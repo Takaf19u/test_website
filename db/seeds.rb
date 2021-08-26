@@ -1,17 +1,30 @@
+numbers = (1..99).to_a
+bools = [true, false]
+
 # admin
-Administrator.create!(email: "admin@appirits.com", password: "abc12345")
+Administrator.create!(email: "admin@appirits.com", password: "abc12345") unless Administrator.exists?
 
 # users
-10.times do |i|
-  User.create!(email: "user#{i}@appirits.com", password: "abc12345")
-end
+unless User.exists?
+  10.times do |i|
+    User.create!(email: "user#{i}@appirits.com", password: "abc12345")
+  end
 
-User.all.each do |user|
-  UserDetail.create!(
-    company_name: "company#{user.id}",
-    department_name: user.id.even? ? "テスト#{user.id}部" : "",
-    name: "user#{user.id}",
-    phone_number: "0000000000#{user.id}",
-    user_id: user.id,
-  )
+  User.all.each do |user|
+    UserDetail.create!(
+      company_name: "company#{user.id}",
+      department_name: ["テスト#{user.id}部", ""].sample,
+      name: "user#{user.id}",
+      phone_number: "000000000#{numbers.sample}",
+      user_id: user.id
+    )
+  end
+
+  UserDetail.all.each do |detail|
+    UserNotification.create!(
+      other: bools.sample,
+      job: bools.sample,
+      user_detail_id: detail.id
+    )
+  end
 end

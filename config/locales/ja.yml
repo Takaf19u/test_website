@@ -219,6 +219,7 @@ ja:
     remember_me: ログイン状態を保持
     notice_title: タイトル
     notice_tag: お知らせ種別
+    select_notice: 受け取るお知らせ
     notice_content: お知らせ内容
     current_sign_in_at: 最終ログイン日
     created_user: 作成者

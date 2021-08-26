@@ -9,7 +9,6 @@ class User < ApplicationRecord
 
   has_one :user_detail, dependent: :destroy
   accepts_nested_attributes_for :user_detail
-  belongs_to :user_notification, dependent: :destroy
 
   validates :email, presence: true
   validates :password, presence: true, on: :password

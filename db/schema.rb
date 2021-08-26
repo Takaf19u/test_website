@@ -47,12 +47,12 @@ ActiveRecord::Schema.define(version: 2021_08_24_071026) do
   end
 
   create_table "user_notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.boolean "other", null: false
-    t.boolean "job", null: false
-    t.bigint "user_id", null: false
+    t.boolean "other", default: false, null: false
+    t.boolean "job", default: false, null: false
+    t.bigint "user_detail_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_user_notifications_on_user_id"
+    t.index ["user_detail_id"], name: "index_user_notifications_on_user_detail_id"
   end
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -70,5 +70,5 @@ ActiveRecord::Schema.define(version: 2021_08_24_071026) do
 
   add_foreign_key "notifications", "administrators"
   add_foreign_key "user_details", "users"
-  add_foreign_key "user_notifications", "users"
+  add_foreign_key "user_notifications", "user_details"
 end
