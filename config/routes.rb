@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     scope :admin do
       resources :notifications do
         post 'confirm', on: :collection
-        # get 'new', on: :collection
-        # get 'show', on: :member
       end
     end
   end
@@ -20,6 +18,7 @@ Rails.application.routes.draw do
       get 'password', on: :member
       patch 'password_update', on: :member
       post 'confirm', on: :member
+      resources :notifications, only: [:index, :show]
     end
   end
 

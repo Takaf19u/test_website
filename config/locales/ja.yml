@@ -265,12 +265,16 @@ ja:
     notice_tags:
       job: 求人のお知らせ
       other: その他のお知らせ
+      short:
+        job: 求人
+        other: その他
   message:
     delete_user: 'ユーザーの削除を実行しますか？'
     delete_notice: 'お知らせの削除を実行しますか？'
     change_password: 'パスワードを変更しますか？'
     delete_success: '削除が正常に完了しました'
     not_data: '登録データが存在しません。'
+    not_notice_data: 'お知らせがありません。'
     complete_user_edit: 'ユーザー情報を更新しました'
     complete_password: 'パスワードを更新しました'
     complete_notice: 'お知らせを作成しました'

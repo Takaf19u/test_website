@@ -4,6 +4,9 @@
       =icon("far", "user")
       =link_to I18n.t("attributes.titles.mypage_detail"), users_mypage_path(current_user.id)
     %li
+      =icon("far", "bell")
+      =link_to I18n.t("attributes.titles.notice"), users_mypage_notifications_path(current_user.id)
+    %li
       =icon("far", "edit")
       =link_to "#{I18n.t("attributes.titles.mypage_detail")} #{I18n.t("attributes.edit")}", edit_users_mypage_path(current_user.id)
     %li

@@ -1,0 +1,12 @@
+=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.titles.mypage"),
+                                                               title_en: I18n.t("attributes.titles.mypage_en") }
+.main_contents.mypage.notice_show
+  .main_menu
+    %h2= @notice.title
+    .field.info
+      = "配信日：#{l @notice.created_at}"
+      %span= I18n.t("attributes.notice_tags.short.#{@notice.tag}")
+    .field.content
+      = safe_join(@notice.content.split("\n"), tag(:br))
+
+  =render partial: 'users/shared/side_menu'

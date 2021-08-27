@@ -1,0 +1,33 @@
+=render partial: 'users/shared/top_contents', locals: { title: I18n.t("attributes.titles.mypage"),
+                                                               title_en: I18n.t("attributes.titles.mypage_en") }
+.main_contents.mypage.notice
+  .main_menu
+    %h2= I18n.t("attributes.titles.notice")
+    .search_contents
+      = search_form_for @q, url: users_mypage_notifications_path(current_user.id) do |f|
+        .field
+          .search_box
+            = f.search_field :title_or_content_cont, placeholder: "キーワード検索"
+            = button_tag type: "submit" do
+              = icon("fas", "search")
+    .notice_contents
+      #notice_table
+        .count= "全 #{@notices_count} 件"
+        %table
+          %tbody
+            -if @notices.present?
+              - @notices.each do |notice|
+                %tr
+                  %td.tag
+                    %span= I18n.t("attributes.notice_tags.short.#{notice.tag}")
+                  %td.title
+                    = notice.title
+                  %td.created_at
+                    = l notice.created_at
+                  %td.link
+                    =link_to "", users_mypage_notification_path(current_user.id, notice.id)
+            -else
+              %tr.no_data
+                %td= I18n.t('message.not_notice_data')
+
+  =render partial: 'users/shared/side_menu'

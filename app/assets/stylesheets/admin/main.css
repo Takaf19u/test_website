@@ -217,64 +217,64 @@ body.admin #side_menu_btn {
 /* admin_user_detail
 * ========================================================================== */
 
-.search_contents {
+.main.admin .search_contents {
   margin: 0px auto ;
   padding: 30px 0 30px;
   max-width: 1000px;
   border-bottom: 2px solid #6e879e;
 }
 
-.search_contents label {
+.main.admin .search_contents label {
   display: block;
   margin-bottom: 2px;
   color: rgb(92, 107, 128);
 }
 
-.search_contents form {
+.main.admin .search_contents form {
   padding: 0px 10px;
   width: 100%;
 }
 
-.search_contents input {
+.main.admin .search_contents input {
   width: 100%;
   border: 1px solid #6e879e;
 }
 
-.search_contents input[type="search"],
-.search_contents input[type="date"] {
+.main.admin .search_contents input[type="search"],
+.main.admin .search_contents input[type="date"] {
   padding: 5px;
   height: 30px;
 }
 
-.search_contents .sign_in_at input {
+.main.admin .search_contents .sign_in_at input {
   width: 49.0%;
 }
 
-.search_contents .left_menu {
+.main.admin .search_contents .left_menu {
   float: left;
   width: 40%;
   min-width: 160px;
 }
 
-.search_contents .right_menu {
+.main.admin .search_contents .right_menu {
   float: right;
   width: 40%;
 }
 
-.search_contents .field {
+.main.admin .search_contents .field {
   margin-bottom: 10px;
   text-align: left;
 }
 
-.search_contents .field.sign_in_at input:last-child {
+.main.admin .search_contents .field.sign_in_at input:last-child {
   float: right;
 }
 
-.search_contents form input[type="date"]{
+.main.admin .search_contents form input[type="date"]{
   position: relative;
 }
 
-.search_contents form input[type="date"]::before {
+.main.admin .search_contents form input[type="date"]::before {
   position: absolute;
   top: 0;
   right: 0;
@@ -288,34 +288,34 @@ body.admin #side_menu_btn {
   color: white;
 }
 
-.search_contents form #q_current_sign_in_at_gteq::before {
+.main.admin .search_contents form #q_current_sign_in_at_gteq::before {
   content: "Start";
 }
 
-.search_contents form #q_current_sign_in_at_lteq_end_of_day::before {
+.main.admin .search_contents form #q_current_sign_in_at_lteq_end_of_day::before {
   content: "End";
 }
 
-.search_contents form input[type=date]::-webkit-calendar-picker-indicator {
+.main.admin .search_contents form input[type=date]::-webkit-calendar-picker-indicator {
   position: absolute;
   width: 100%;
   height: 100%;
   opacity: 0;
 }
 
-.search_contents form .actions {
+.main.admin .search_contents form .actions {
   clear: both;
   padding-top: 30px;
   border-radius: 5px;
 }
 
-.search_contents form .actions input[type="submit"] {
+.main.admin .search_contents form .actions input[type="submit"] {
   padding: 8px 0px;
   border-radius: 5px;
   color: rgb(92, 107, 128);
 }
 
-.search_contents form .actions input[type="submit"]:hover {
+.main.admin .search_contents form .actions input[type="submit"]:hover {
   background: #6e879e;
   color: white;
 }
@@ -538,27 +538,24 @@ body.admin #side_menu_btn {
 /* admin/notifications#show
 * ========================================================================== */
 
-.main_contents.notice#show,
-.main_contents.notice#new {
+.main.admin .main_contents.notice#show,
+.main.admin .main_contents.notice#new {
+  margin: 0px 20px;
   padding-top: 40px;
   text-align: left;
 }
 
-.main_contents.notice {
-  margin: 0px 20px;
-}
-
-.main_contents.notice .input_form {
+.main.admin .main_contents.notice .input_form {
   padding: 5px 30px;
   background: white;
   box-shadow: 0px -5px 3px 0px lightgrey;
 }
 
-.main_contents.notice .input_form .field {
+.main.admin .main_contents.notice .input_form .field {
   margin: 30px 0px;
 }
 
-.main_contents.notice .input_form .text_area {
+.main.admin .main_contents.notice .input_form .text_area {
   padding: 10px;
   width: 100%;
   background: #f0f7f7;
@@ -566,19 +563,19 @@ body.admin #side_menu_btn {
   border-radius: 5px;
 }
 
-.main_contents.notice .input_form .radios {
+.main.admin .main_contents.notice .input_form .radios {
   display: inline-block;
   margin-right: 10px;
 }
 
-.main_contents.notice .input_form label.tag {
+.main.admin .main_contents.notice .input_form label.tag {
   margin-bottom: 0;
   font-size: 1.2rem;
   vertical-align: top;
   color: black;
 }
 
-.main_contents.notice form .actions {
+.main.admin .main_contents.notice form .actions {
   margin-top: 20px;
   padding: 10px;
   border-top: 2px solid lightgray;
@@ -586,7 +583,7 @@ body.admin #side_menu_btn {
 
 }
 
-.main_contents.notice form .actions a {
+.main.admin .main_contents.notice form .actions a {
   display: inline-block;
   margin-right: 10px;
   padding: 10px;
@@ -597,7 +594,7 @@ body.admin #side_menu_btn {
   color: rgb(92, 107, 128);
 }
 
-.main_contents.notice form .actions a:hover {
+.main.admin .main_contents.notice form .actions a:hover {
   background: #6e879e;
   color:
   white;
@@ -605,33 +602,33 @@ body.admin #side_menu_btn {
 
 /* admin/notifications#new
 * ========================================================================== */
-.main_contents.notice#new .field {
+.main.admin .main_contents.notice#new .field {
   position: relative;
 }
 
-.main_contents.notice#new .input_form .cnt_area {
+.main.admin .main_contents.notice#new .input_form .cnt_area {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-.main_contents.notice#new .input_form .cnt_area.max {
+.main.admin .main_contents.notice#new .input_form .cnt_area.max {
   color: red;
 }
 
-.main_contents.notice#new .field.title {
+.main.admin .main_contents.notice#new .field.title {
   width: 40%;
   min-width: 200px;
 }
 
-.main_contents.notice#new .input_form input[type="text"] {
+.main.admin .main_contents.notice#new .input_form input[type="text"] {
   padding: 5px;
   height: 40px;
   width: 100%;
   border: 1px solid lightgray;
 }
 
-.main_contents.notice .input_form textarea {
+.main.admin .main_contents.notice .input_form textarea {
   display: block;
   resize: both;
   padding: 10px;
@@ -642,7 +639,7 @@ body.admin #side_menu_btn {
   border-radius: 5px;
 }
 
-.main_contents.notice#new .actions input[type="submit"] {
+.main.admin .main_contents.notice#new .actions input[type="submit"] {
   display: inline-block;
   margin-right: 10px;
   padding: 10px;
@@ -653,7 +650,7 @@ body.admin #side_menu_btn {
   color: rgb(92, 107, 128);
 }
 
-.main_contents.notice#new .actions input[type="submit"]:hover {
+.main.admin .main_contents.notice#new .actions input[type="submit"]:hover {
   background: #6e879e;
   color:white;
 }
@@ -772,19 +769,19 @@ body.admin #side_menu_btn {
 
 @media screen and (max-width: 620px) {
 
-  .search_contents .left_menu,
-  .search_contents .right_menu {
+  .main.admin .search_contents .left_menu,
+  .main.admin .search_contents .right_menu {
     float: none;
   }
 
-  .search_contents .left_menu,
-  .search_contents .right_menu,
-  .search_contents form .actions {
+  .main.admin .search_contents .left_menu,
+  .main.admin .search_contents .right_menu,
+  .main.admin .search_contents form .actions {
     margin: 0 auto;
     width: 80%;
   }
 
-  .main_contents.notice#show .actions a {
+  .main.admin .main_contents.notice#show .actions a {
     margin: 5px 0px;
     width: 100%;
   }
@@ -792,11 +789,11 @@ body.admin #side_menu_btn {
 
 @media screen and (max-width: 479px) {
 
-  .search_contents form .sign_in_at input{
+  .main.admin .search_contents form .sign_in_at input{
     width: 100%;
   }
 
-  .search_contents form #q_current_sign_in_at_gteq {
+  .main.admin .search_contents form #q_current_sign_in_at_gteq {
     margin-bottom: 10px;
   }
 
@@ -841,9 +838,9 @@ body.admin #side_menu_btn {
 }
 
 @media screen and (max-width: 400px) {
-  .search_contents .left_menu,
-  .search_contents .right_menu,
-  .search_contents form .actions {
+  .main.admin .search_contents .left_menu,
+  .main.admin .search_contents .right_menu,
+  .main.admin .search_contents form .actions {
     width: 100%;
   }
 }

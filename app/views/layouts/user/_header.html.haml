@@ -31,7 +31,7 @@
           =link_to "会社概要", ""
         -if user_signed_in?
           %li
-            =link_to I18n.t('attributes.titles.mypage'), users_mypage_path
+            =link_to I18n.t('attributes.titles.mypage'), users_mypage_path(current_user.id)
         -else
           %li
             =link_to I18n.t('attributes.titles.login'), new_user_session_path

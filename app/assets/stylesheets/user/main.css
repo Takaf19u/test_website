@@ -458,15 +458,13 @@ body.user .confirm .actions .btn.back {
 
 /* /users/mypages#mypage
 * ========================================================================== */
-body.user .main_contents.mypage .field {
-  text-align: left;
-}
-
-/* /users/mypages#show
-* ========================================================================== */
 body.user .mypage {
   overflow: hidden;
   padding-bottom: 0px;
+}
+
+body.user .mypage .main_menu {
+  min-height: 400px;
 }
 
 body.user .mypage .side_menu {
@@ -474,6 +472,10 @@ body.user .mypage .side_menu {
   padding-left: 30px;
   width: 30%;
   border-right: 3px solid rgb(111, 112, 172);
+}
+
+body.user .main_contents.mypage .field {
+  text-align: left;
 }
 
 body.user .mypage .side_menu ul {
@@ -602,4 +604,129 @@ body.user .mypage.password form {
 
 body.user .mypage.password .error {
   text-align: left;
+}
+
+/* /users/mypages#notifications
+* ========================================================================== */
+
+body.user .mypage.notice .search_contents .field {
+  text-align: center;
+}
+
+body.user .mypage.notice .search_contents .search_box {
+  position: relative;
+  display: inline-block;
+  width: 90%;
+}
+
+body.user .mypage.notice .search_contents input[type="search"] {
+  padding: 3px 10px;
+  width: 100%;
+  border: 2px solid rgb(111, 112, 172);
+  border-radius: 15px;
+}
+
+body.user .mypage.notice .search_contents button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  background: #6f70ac;
+  border: none;
+  border-radius: 0 50% 50% 0;
+  color: white;
+}
+
+body.user .mypage.notice .search_contents button:hover {
+  opacity: 0.7;
+}
+
+
+body.user .mypage.notice .notice_contents table {
+  width: 100%;
+  border-top: 2px solid lightgray;
+}
+
+body.user .mypage.notice .notice_contents tr {
+  position: relative;
+  display: block;
+  padding: 15px 10px;
+}
+
+body.user .mypage.notice .notice_contents tr:hover {
+  background: rgb(228, 226, 226);
+}
+
+body.user .mypage.notice .notice_contents td.tag {
+  padding-right: 10px;
+  min-width: 80px;
+}
+
+body.user .mypage.notice .notice_contents td.title {
+  width: 100%;
+}
+
+body.user .mypage.notice .notice_contents td.created_at {
+  min-width: 80px;
+}
+
+body.user .mypage.notice .notice_contents td.link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+body.user .mypage.notice .notice_contents td.tag span {
+  display: inline-block;
+  padding: 2px 5px;
+  min-width: 40px;
+  background: rgb(68, 116, 179);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 5px;
+  color: white;
+}
+
+body.user .mypage.notice .notice_contents td.link a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+
+/* /users/mypages#notifications#show
+* ========================================================================== */
+body.user .mypage.notice_show .main_menu .info {
+  margin-top: 0px;
+  border-bottom: 2px solid rgb(111 112 172);
+  text-align: right;
+}
+
+body.user .mypage.notice_show .main_menu .info span {
+  position: relative;
+  margin-left:  10px;
+  padding: 5px 8px;
+  font-size: 5px;
+  color: white;
+  vertical-align: text-top;
+}
+
+body.user .mypage.notice_show .main_menu .info span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background:rgb(111 112 172);
+  border-radius: 5px 5px 0 0;
+  z-index: -1;
+}
+
+body.user .mypage.notice_show .main_menu .content {
+  padding: 0px 10px;
+  font-size: 1.1em;
 }
