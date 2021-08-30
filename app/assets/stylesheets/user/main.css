@@ -338,6 +338,27 @@ body.user form {
   text-align: center;
 }
 
+/* top
+* ========================================================================== */
+body.user .main_contents.toppage {
+  display: flex;
+}
+
+body.user .main_contents.toppage .contents {
+  margin: 10px auto;
+  height: 300px;
+  width: 300px;
+  border: 5px double lightgray;
+}
+
+body.user .main_contents.toppage .contents a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  line-height: 20;
+}
+
 /* /users/sign_in
 /* /users/sign_up
 /* /users/sign_up/confirm

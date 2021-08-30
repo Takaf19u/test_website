@@ -50,6 +50,7 @@ class User < ApplicationRecord
 
   def self.correct_current_sign_in_at?(q)
     return true if q.blank?
+    return true if q[:current_sign_in_at_gteq].blank? || q[:current_sign_in_at_lteq_end_of_day].blank?
     q[:current_sign_in_at_gteq] <= q[:current_sign_in_at_lteq_end_of_day]
   end
 end

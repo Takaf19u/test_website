@@ -7,7 +7,7 @@
         %p= @notice.title
       .field
         = f.label :notice_content
-        .text_area= @notice.content
+        .text_area= text_url_to_link(@notice.content)
       .field
         = f.label :notice_tag
         %p= I18n.t("attributes.notice_tags.#{@notice.tag}")

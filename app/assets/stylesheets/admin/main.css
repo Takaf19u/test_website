@@ -413,6 +413,10 @@ body.admin #side_menu_btn {
   padding: 10px 30px 10px 0px;
 }
 
+.main.admin #detail_table tr.no_data td {
+  width: 100%;
+}
+
 .main.admin #detail_table td a {
   width: 50px;
   color: #75aaca;

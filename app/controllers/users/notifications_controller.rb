@@ -12,5 +12,4 @@ class Users::NotificationsController < ApplicationController
   def show
     @notice = Notification.find(params[:id])
   end
-
 end

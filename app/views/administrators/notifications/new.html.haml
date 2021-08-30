@@ -9,6 +9,7 @@
           = "/ 30"
         %br
         = f.text_field :title, maxlength: 30, data: {length: "30"}, placeholder: I18n.t("attributes.placeholder.notice_title"), autofocus: true, class: "js-count"
+        = render partial: "administrators/shared/error_messages", locals: { attribute: I18n.t("attributes.notice_title"), err_message: @notice.errors.messages[:title].first }
       .field
         = f.label :notice_content
         .cnt_area
@@ -16,6 +17,7 @@
           = "/ 500"
         %br
         = f.text_area :content, maxlength: 500, data: {length: "500"}, placeholder: I18n.t("attributes.placeholder.notice_content"), class: "js-count"
+        = render partial: "administrators/shared/error_messages", locals: { attribute: I18n.t("attributes.notice_content"), err_message: @notice.errors.messages[:content].first }
       .field
         = f.label :notice_tag
         %br
@@ -23,6 +25,7 @@
           .radios
             = f.radio_button :tag, k
             = f.label I18n.t("attributes.notice_tags.#{k}"), for: "notification_tag_#{k}", class: "tag"
+        = render partial: "administrators/shared/error_messages", locals: { attribute: I18n.t("attributes.notice_tag"), err_message: @notice.errors.messages[:tag].first }
     .actions
       = link_to I18n.t("attributes.back"), notifications_path
       = f.submit I18n.t("attributes.confirm")

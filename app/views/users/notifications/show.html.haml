@@ -7,6 +7,6 @@
       = "配信日：#{l @notice.created_at}"
       %span= I18n.t("attributes.notice_tags.short.#{@notice.tag}")
     .field.content
-      = safe_join(@notice.content.split("\n"), tag(:br))
+      = text_url_to_link(@notice.content)
 
   =render partial: 'users/shared/side_menu'

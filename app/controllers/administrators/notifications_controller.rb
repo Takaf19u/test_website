@@ -1,6 +1,8 @@
 class Administrators::NotificationsController < ApplicationController
   layout "admin/application"
   before_action :authenticate_administrator!
+  before_action :confirm_url?, only: [:show]
+
   def index
     @q = Notification.ransack(params[:q])
     @notices = @q.result(distinct: true).order(id: "DESC")
@@ -43,5 +45,9 @@ class Administrators::NotificationsController < ApplicationController
 
   def notice_params
     params.require(:notification).permit(:title, :content, :tag).merge(administrator_id: current_administrator.id)
+  end
+
+  def confirm_url?
+    return redirect_to new_notification_path if params[:id].eql?("confirm")
   end
 end

@@ -25,7 +25,7 @@
         - Notification.tags.each_key do |k|
           .checkbox
             = notice.check_box k.to_sym
-            = notice.label I18n.t("attributes.notice_tags.#{k}"), for: "user_user_detail_attributes_notification_#{k}"
+            = notice.label I18n.t("attributes.notice_tags.#{k}"), for: "user_user_detail_attributes_user_notification_attributes_#{k}"
 .field
   = f.label :email
   %br

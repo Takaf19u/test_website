@@ -1,8 +1,6 @@
 =render partial: 'users/shared/top_contents', locals: { title: "Appirits 仮TOPページ" , title_en: "Appirits page" }
-.main_contents.top
+.main_contents.toppage
   .contents
-    =link_to new_admin_session_path do
-      %p 管理側ログイン
+    =link_to "管理側ログイン", new_admin_session_path
   .contents
-    =link_to new_user_session_path do
-      %p ユーザー側ログイン
+    =link_to "ユーザー側ログイン", new_user_session_path
