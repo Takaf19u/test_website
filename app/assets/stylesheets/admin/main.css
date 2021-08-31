@@ -44,6 +44,10 @@ body.admin header .left_menu:hover {
   max-width: 1300px;
 }
 
+.main.admin::-webkit-scrollbar {
+  display: none;
+}
+
 .main.admin h1 {
   padding: 20px 0;
   border-bottom: 4px solid #6e879e;
