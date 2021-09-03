@@ -15,3 +15,5 @@ RUN rbenv install 2.7.1 && \
     rbenv global 2.7.1 && \
     rbenv exec gem install bundler
 WORKDIR /test_app
+COPY Gemfile /test_app/Gemfile
+COPY Gemfile.lock /test_app/Gemfile.lock

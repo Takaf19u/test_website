@@ -240,7 +240,7 @@ ja:
     registration: 登録
     placeholder:
       name: 例）山田 太郎
-      company_name: 例）株式会社アピリッツ
+      company_name: 例）株式会社test
       department_name: 例）メディアマーケティング部
       phone_number: ハイフンなし半角数字
       email: 例）sample@test.com
