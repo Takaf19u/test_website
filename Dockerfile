@@ -14,5 +14,4 @@ ENV PATH /root/.rbenv/shims:/root/.rbenv/bin:$PATH
 RUN rbenv install 2.7.1 && \
     rbenv global 2.7.1 && \
     rbenv exec gem install bundler
-
 WORKDIR /test_app

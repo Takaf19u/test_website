@@ -2,12 +2,12 @@ numbers = (1..99).to_a
 bools = [true, false]
 
 # admin
-Administrator.create!(email: "admin@appirits.com", password: "abc12345") unless Administrator.exists?
+Administrator.create!(email: "admin@test.com", password: "abc12345") unless Administrator.exists?
 
 # users
 unless User.exists?
   10.times do |i|
-    User.create!(email: "user#{i}@appirits.com", password: "abc12345")
+    User.create!(email: "user#{i}@test.com", password: "abc12345")
   end
 
   User.all.each do |user|
